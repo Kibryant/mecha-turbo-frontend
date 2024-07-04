@@ -10,11 +10,11 @@ export default function Button({ text, href }: ButtonProps) {
   return (
     <Link
       href={`/inicio/${href}`}
-      className="p-4 w-full bg-blue-500 rounded-md mt-2"
+      className="p-4 w-full  bg-primary rounded-md mt-2"
       asChild
     >
       <Pressable>
-        <Text className="text-white font-bold text-center">{text}</Text>
+        <Text className="text-gray-100 font-bold text-center">{text}</Text>
       </Pressable>
     </Link>
   );
