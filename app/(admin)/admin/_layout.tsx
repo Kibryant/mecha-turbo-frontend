@@ -3,8 +3,20 @@ import { Drawer } from "expo-router/drawer";
 import { Image, Text, TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { logoHorizontal } from "@/constants/logo";
+import { useAuthAdmin } from "@/context/adminAuthContext";
+import { Redirect } from "expo-router";
 
 export default function Layout() {
+  const { isLoading, token } = useAuthAdmin();
+
+  if (isLoading) {
+    return <Text>Carregando...</Text>;
+  }
+
+  if (!token) {
+    return <Redirect href="/sign-in-adm" />;
+  }
+
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <Drawer
@@ -36,6 +48,18 @@ export default function Layout() {
           name="index"
           options={{
             drawerLabel: "Início",
+          }}
+        />
+        <Drawer.Screen
+          name="configuracoes"
+          options={{
+            drawerLabel: "Configurações",
+          }}
+        />
+        <Drawer.Screen
+          name="usuarios"
+          options={{
+            drawerLabel: "Usuários cadastrados",
           }}
         />
       </Drawer>

@@ -3,22 +3,21 @@ import { Drawer } from "expo-router/drawer";
 import { Image, Text, TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { logoHorizontal } from "@/constants/logo";
-import { useRouter } from "expo-router";
-import { useEffect } from "react";
-import { getItem, setItem } from "@/lib/storage";
-import { checkExpirationDate } from "@/utils/checkExpirationDate";
+import { Redirect } from "expo-router";
+import { isSubscriptionActive } from "@/utils/isSubscriptionActive";
+import { useAuthUser } from "@/context/userAuthContext";
+import { User } from "@/core/user";
+import { useAuthAdmin } from "@/context/adminAuthContext";
 
 export default function Layout() {
-  const router = useRouter();
+  const { user } = useAuthUser();
+  const { token } = useAuthAdmin();
 
-  useEffect(() => {
-    getItem("expirationDate").then((value) => {
-      if (!checkExpirationDate(value)) {
-        setItem("isLogged", false);
-        router.replace("/sign-in");
-      }
-    });
-  }, [router]);
+  const userObject: User = JSON.parse(user || "null");
+
+  if (!isSubscriptionActive(userObject?.expirationDate ?? "") && !token) {
+    return <Redirect href="/sign-in" />;
+  }
 
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>

@@ -1,33 +1,24 @@
 import { useState } from "react";
 import { View, Text, TextInput, Pressable, Image } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Link, Redirect, useRouter } from "expo-router";
+import { Link, useRouter } from "expo-router";
 import { logoVertical } from "@/constants/logo";
-import { useAuthUser } from "@/context/userAuthContext";
-import { User } from "@/core/user";
+import { useAuthAdmin } from "@/context/adminAuthContext";
 
 const LoginScreen = () => {
   const router = useRouter();
 
-  const { signIn, user } = useAuthUser();
-  const userObject: User = JSON.parse(user || "{}");
+  const { signIn } = useAuthAdmin();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [accessCode, setAccessCode] = useState("");
 
   const handleLogin = async () => {
-    const { success } = await signIn({ email, password });
+    await signIn({ accessCode, email, password });
 
-    if (!success) {
-      return;
-    }
-
-    router.replace("/");
+    router.replace("/admin");
   };
-
-  if (userObject._id) {
-    return <Redirect href="/" />;
-  }
 
   return (
     <View className="flex-1 items-center justify-center p-4">
@@ -41,17 +32,30 @@ const LoginScreen = () => {
             Boas-Vindas!
           </Text>
           <Text className="text-gray-100 mb-4">
-            Faça login para acessar o sistema.
+            Faça login para acessar o painel administrativo.
           </Text>
         </View>
 
         <View className="w-full flex-row justify-between">
-          <Link href="/" className="text-primary mb-2 text-center">
+          <Link href="/admin" className="text-primary mb-2 text-center">
             Esqueceu a senha?
           </Link>
-          <Link href="/sign-in-adm" className="text-primary mb-2 text-center">
-            Acessar como Administrador
+          <Link href="/sign-in" className="text-primary mb-2 text-center">
+            Acessar como Usuário
           </Link>
+        </View>
+
+        <View className="w-full">
+          <TextInput
+            className="w-full px-2 py-3 mb-4 border rounded-md border-gray-700"
+            placeholder="Código de Acesso"
+            value={accessCode}
+            onChangeText={setAccessCode}
+            secureTextEntry
+            accessibilityLabel="Código de Acesso"
+            placeholderTextColor="#374151"
+            style={{ color: "#f3f4f6", fontSize: 12 }}
+          />
         </View>
 
         <View className="w-full">

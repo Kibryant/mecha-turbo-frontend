@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import {
   View,
   Text,
   TextInput,
-  FlatList,
   Alert,
   Pressable,
   Platform,
   TouchableHighlight,
   TouchableOpacity,
+  ScrollView,
 } from "react-native";
 import { api } from "@/lib/api";
 import { User } from "@/core/user";
@@ -16,26 +16,23 @@ import DateTimePicker, {
   DateTimePickerEvent,
 } from "@react-native-community/datetimepicker";
 import dayjs from "dayjs";
-import { checkExpirationDate } from "@/utils/checkExpirationDate";
-import { getToken, removeToken } from "@/lib/secureStore";
+import { isSubscriptionActive } from "@/utils/isSubscriptionActive";
 import { Ionicons } from "@expo/vector-icons";
+import { useAuthAdmin } from "@/context/adminAuthContext";
 
-export default function Admin() {
+export default function Usuarios() {
+  const { token } = useAuthAdmin();
+
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [users, setUsers] = useState<User[]>([]);
   const [showDatePicker, setShowDatePicker] = useState(false);
-  const [date, setDate] = useState(new Date());
+  const [date, setDate] = useState<Date | null>(null);
   const [editingUser, setEditingUser] = useState<User | null>(null);
-  const [refreshingPage, setRefreshingPage] = useState(false);
+  const [, setRefreshingPage] = useState(false);
 
-  useEffect(() => {
-    fetchUsers();
-  }, []);
-
-  const fetchUsers = async () => {
-    const token = await getToken();
-
+  const fetchUsers = useCallback(async () => {
     const response = await api.get("/users", {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -43,11 +40,13 @@ export default function Admin() {
     });
 
     setUsers(response.data.users);
-  };
+  }, [token]);
+
+  useEffect(() => {
+    fetchUsers();
+  }, [fetchUsers]);
 
   const addUser = async () => {
-    const token = await getToken();
-
     if (!date) {
       Alert.alert("Erro", "Selecione a data de compra");
       return;
@@ -82,6 +81,7 @@ export default function Admin() {
         await api.post<User>(
           "/add-user",
           {
+            name,
             email,
             password,
             purchaseDate,
@@ -96,6 +96,8 @@ export default function Admin() {
         Alert.alert("Sucesso", "Usuário adicionado com sucesso");
       }
       setEmail("");
+      setName("");
+      setDate(null);
       fetchUsers();
     } catch (error) {
       Alert.alert("Erro", "Ocorreu um erro ao adicionar/atualizar o usuário");
@@ -104,6 +106,7 @@ export default function Admin() {
   };
 
   const editUser = (user: User) => {
+    setName(user.name);
     setEmail(user.email);
     setDate(new Date(user.purchaseDate));
     setEditingUser(user);
@@ -113,7 +116,7 @@ export default function Admin() {
     try {
       await api.delete(`/delete-user/${id}`, {
         headers: {
-          Authorization: `Bearer ${await getToken()}`,
+          Authorization: `Bearer ${token}`,
         },
       });
       Alert.alert("Sucesso", "Usuário deletado com sucesso");
@@ -137,45 +140,22 @@ export default function Admin() {
   };
 
   return (
-    <View className="flex-1 bg-secondary px-4">
-      <View className="flex-col items-center gap-y-1 mt-4">
-        <Text className="text-3xl font-bold text-primary">
-          Olá, Administrador!
-        </Text>
-        <Text className="text-lg text-gray-300">
-          Seja bem-vindo(a) ao Painel de Administração.
-        </Text>
-      </View>
-
-      {/* <View className="flex-col items-center gap-y-2 px-3">
-          <Text className="text-lg font-bold">Adicionar Usuário</Text>
-          <TextInput
-            className="w-full p-2 mb-4 border border-gray-300 rounded-md"
-            placeholder="Email"
-            keyboardType="email-address"
-            autoCapitalize="none"
-            accessibilityLabel="Email"
-          />
-          <TextInput
-            className="w-full p-2 mb-4 border border-gray-300 rounded-md"
-            placeholder="Senha"
-            secureTextEntry
-            accessibilityLabel="Senha"
-          />
-          <Pressable
-            className="w-full bg-emerald-500 rounded-md py-2"
-            onPress={() => Alert.alert("Adicionado com sucesso!")}
-          >
-            <Text className="text-center text-white font-bold">Adicionar</Text>
-          </Pressable>
-        </View> */}
-
-      <Text className="text-2xl font-bold text-gray-100 text-center mt-20">
-        {editingUser ? "Editar" : "Adionar"} Usuário
+    <ScrollView className="flex-1 bg-secondary px-4">
+      <Text className="text-2xl font-bold text-gray-100 text-center mt-2">
+        {editingUser ? "Editar Usuário" : "Adicionar Usuário"}
       </Text>
 
-      <View className="flex-col items-center gap-y-4">
+      <View className="flex-col items-center gap-y-4 w-full">
         <View className="w-full gap-y-2">
+          <TextInput
+            className="w-full p-2 border border-gray-300 rounded-md"
+            placeholder="Nome do Usuário"
+            accessibilityLabel="Nome"
+            value={name}
+            onChangeText={setName}
+            placeholderTextColor="#374151"
+            style={{ color: "#f3f4f6", fontSize: 12 }}
+          />
           <TextInput
             className="w-full p-2 border border-gray-300 rounded-md"
             placeholder="Email do Usuário"
@@ -203,7 +183,9 @@ export default function Admin() {
             className="w-full rounded-md p-3 border border-primary"
           >
             <Text className="text-center text-white font-bold">
-              Selecionar Data de Compra
+              {date
+                ? date.toLocaleDateString("pt-br")
+                : "Selecionar Data de Compra"}
             </Text>
           </TouchableHighlight>
         </View>
@@ -211,7 +193,7 @@ export default function Admin() {
         <View className="w-full mb-4 rounded-md gap-y-2">
           {showDatePicker && (
             <DateTimePicker
-              value={date}
+              value={date || new Date()}
               mode="date"
               display="default"
               onChange={onChangeDate}
@@ -257,33 +239,38 @@ export default function Admin() {
         <Ionicons name="refresh" size={24} color="#f3f4f6" />
       </TouchableOpacity>
 
-      <FlatList
-        data={users}
-        keyExtractor={(item) => item.email}
-        renderItem={({ item }) => (
-          <View className="border-b-2 border-primary p-4">
-            <Text className="text-lg font-bold text-primary">{item.email}</Text>
+      {users.length > 0 &&
+        users.map((user) => (
+          <View className="border-b-2 border-primary p-4" key={user.email}>
+            <Text className="text-lg font-bold text-primary">{user.email}</Text>
             <Text className="text-lg font-bold text-gray-300">
               Data de Compra:{" "}
-              {new Date(item.purchaseDate).toLocaleDateString("pt-br")}
+              {new Date(user.purchaseDate).toLocaleDateString("pt-br")}
             </Text>
             <Text className="text-lg font-bold text-gray-300">
               Data de Expiração:{" "}
-              {new Date(item.expirationDate).toLocaleDateString("pt-br")}
+              {new Date(user.expirationDate).toLocaleDateString("pt-br")}
             </Text>
             <Text
-              // className="text-lg font-bold text-gray-100"
-              className={`text-lg font-bold ${checkExpirationDate(new Date(item.expirationDate).toDateString()) ? "text-green-500" : "text-red-500"}`}
+              className={`text-lg font-bold ${
+                isSubscriptionActive(
+                  new Date(user.expirationDate).toDateString(),
+                )
+                  ? "text-green-500"
+                  : "text-red-500"
+              }`}
             >
               Status:{" "}
-              {checkExpirationDate(new Date(item.expirationDate).toDateString())
+              {isSubscriptionActive(
+                new Date(user.expirationDate).toDateString(),
+              )
                 ? "Ativo"
                 : "Expirado"}
             </Text>
             <View className="flex-row gap-x-2">
               <Pressable
-                className="bg-red-800 rounded-md py-2 flex-1"
-                onPress={() => deleteUser(item._id)}
+                className="bg-primary rounded-md py-2 flex-1"
+                onPress={() => deleteUser(user._id)}
               >
                 <Text className="text-center text-white font-bold">
                   Deletar
@@ -292,16 +279,13 @@ export default function Admin() {
 
               <Pressable
                 className="border border-primary rounded-md py-2 flex-1"
-                onPress={() => editUser(item)}
+                onPress={() => editUser(user)}
               >
                 <Text className="text-center text-white font-bold">Editar</Text>
               </Pressable>
             </View>
           </View>
-        )}
-        refreshing={refreshingPage}
-        onRefresh={handleRefresh}
-      />
-    </View>
+        ))}
+    </ScrollView>
   );
 }
