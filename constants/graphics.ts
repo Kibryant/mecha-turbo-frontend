@@ -12,7 +12,7 @@ export const graphics = [
   "FREE HANDS",
   "GOLDEN CONTRAST",
   "ILUMINUS CORRECTION",
-  "MAXI COUNTOUR",
+  "MAXI CONTOUR",
   "SUN LIGHT",
   "SUN LIGHT 2.0",
 ];

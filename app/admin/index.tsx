@@ -7,15 +7,18 @@ import {
   Alert,
   Pressable,
   Platform,
+  TouchableHighlight,
+  TouchableOpacity,
 } from "react-native";
 import { api } from "@/lib/api";
 import { User } from "@/core/user";
-import { SafeAreaView } from "react-native-safe-area-context";
 import DateTimePicker, {
   DateTimePickerEvent,
 } from "@react-native-community/datetimepicker";
 import dayjs from "dayjs";
 import { checkExpirationDate } from "@/utils/checkExpirationDate";
+import { getToken, removeToken } from "@/lib/secureStore";
+import { Ionicons } from "@expo/vector-icons";
 
 export default function Admin() {
   const [email, setEmail] = useState("");
@@ -24,37 +27,72 @@ export default function Admin() {
   const [showDatePicker, setShowDatePicker] = useState(false);
   const [date, setDate] = useState(new Date());
   const [editingUser, setEditingUser] = useState<User | null>(null);
+  const [refreshingPage, setRefreshingPage] = useState(false);
 
   useEffect(() => {
     fetchUsers();
   }, []);
 
   const fetchUsers = async () => {
-    const response = await api.get("/users");
+    const token = await getToken();
 
-    setUsers(response.data);
+    const response = await api.get("/users", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    setUsers(response.data.users);
   };
 
   const addUser = async () => {
+    const token = await getToken();
+
+    if (!date) {
+      Alert.alert("Erro", "Selecione a data de compra");
+      return;
+    }
+
     const purchaseDate = date.toISOString();
     const expirationDate = dayjs(purchaseDate).add(1, "year").toISOString();
 
+    if (!email || !password) {
+      Alert.alert("Erro", "Preencha todos os campos");
+      return;
+    }
+
     try {
       if (editingUser) {
-        await api.put(`/update-user/${editingUser._id}`, {
-          email,
-          purchaseDate,
-          expirationDate,
-        });
+        await api.put(
+          `/update-user/${editingUser._id}`,
+          {
+            email,
+            purchaseDate,
+            expirationDate,
+          },
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          },
+        );
         setEditingUser(null);
         Alert.alert("Sucesso", "Usuário atualizado com sucesso");
       } else {
-        await api.post<User>("/add-user", {
-          email,
-          password,
-          purchaseDate,
-          expirationDate,
-        });
+        await api.post<User>(
+          "/add-user",
+          {
+            email,
+            password,
+            purchaseDate,
+            expirationDate,
+          },
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          },
+        );
         Alert.alert("Sucesso", "Usuário adicionado com sucesso");
       }
       setEmail("");
@@ -73,7 +111,11 @@ export default function Admin() {
 
   const deleteUser = async (id: string) => {
     try {
-      await api.delete(`/delete-user/${id}`);
+      await api.delete(`/delete-user/${id}`, {
+        headers: {
+          Authorization: `Bearer ${await getToken()}`,
+        },
+      });
       Alert.alert("Sucesso", "Usuário deletado com sucesso");
       fetchUsers();
     } catch (error) {
@@ -88,14 +130,24 @@ export default function Admin() {
     setDate(currentDate);
   };
 
-  return (
-    <SafeAreaView>
-      <View className="px-3">
-        <View className="flex-col items-center gap-y-1">
-          <Text className="text-2xl font-bold">Olá, Administrador!</Text>
-        </View>
+  const handleRefresh = () => {
+    setRefreshingPage(true);
+    fetchUsers();
+    setRefreshingPage(false);
+  };
 
-        {/* <View className="flex-col items-center gap-y-2 px-3">
+  return (
+    <View className="flex-1 bg-secondary px-4">
+      <View className="flex-col items-center gap-y-1 mt-4">
+        <Text className="text-3xl font-bold text-primary">
+          Olá, Administrador!
+        </Text>
+        <Text className="text-lg text-gray-300">
+          Seja bem-vindo(a) ao Painel de Administração.
+        </Text>
+      </View>
+
+      {/* <View className="flex-col items-center gap-y-2 px-3">
           <Text className="text-lg font-bold">Adicionar Usuário</Text>
           <TextInput
             className="w-full p-2 mb-4 border border-gray-300 rounded-md"
@@ -118,11 +170,12 @@ export default function Admin() {
           </Pressable>
         </View> */}
 
-        {users.length === 0 && (
-          <Text className="text-center"> Nenhum usuário cadastrado</Text>
-        )}
+      <Text className="text-2xl font-bold text-gray-100 text-center mt-20">
+        {editingUser ? "Editar" : "Adionar"} Usuário
+      </Text>
 
-        <View className="flex-col items-center gap-y-2">
+      <View className="flex-col items-center gap-y-4">
+        <View className="w-full gap-y-2">
           <TextInput
             className="w-full p-2 border border-gray-300 rounded-md"
             placeholder="Email do Usuário"
@@ -131,6 +184,8 @@ export default function Admin() {
             accessibilityLabel="Email"
             value={email}
             onChangeText={setEmail}
+            placeholderTextColor="#374151"
+            style={{ color: "#f3f4f6", fontSize: 12 }}
           />
           <TextInput
             className="w-full p-2 border border-gray-300 rounded-md"
@@ -139,84 +194,114 @@ export default function Admin() {
             accessibilityLabel="Senha"
             value={password}
             onChangeText={setPassword}
+            placeholderTextColor="#374151"
+            style={{ color: "#f3f4f6", fontSize: 12 }}
+            editable={!editingUser}
           />
-          <View className="w-full mb-4 border border-gray-300 rounded-md gap-y-2">
-            <Pressable
-              onPress={() => setShowDatePicker(true)}
-              className="w-full bg-emerald-500 rounded-md py-2"
-            >
-              <Text className="text-center text-white font-bold">
-                Selecionar Data de Compra
-              </Text>
-            </Pressable>
-            {showDatePicker && (
-              <DateTimePicker
-                value={date}
-                mode="date"
-                display="default"
-                onChange={onChangeDate}
-              />
-            )}
-            <Pressable
-              className="w-full bg-blue-500 rounded-md py-2"
-              onPress={addUser}
-            >
-              <Text className="text-center text-white font-bold">
-                {editingUser ? "Editar" : "Adicionar"}
-              </Text>
-            </Pressable>
-          </View>
+          <TouchableHighlight
+            onPress={() => setShowDatePicker(true)}
+            className="w-full rounded-md p-3 border border-primary"
+          >
+            <Text className="text-center text-white font-bold">
+              Selecionar Data de Compra
+            </Text>
+          </TouchableHighlight>
         </View>
 
-        <View className="flex-col items-center gap-y-2 mt-20">
-          <Text className="text-xl font-bold">Usuários Cadastrados</Text>
-        </View>
-
-        <FlatList
-          data={users}
-          keyExtractor={(item) => item.email}
-          renderItem={({ item }) => (
-            <View className="border-b-2 border-blue-900 p-4">
-              <Text className="text-lg font-bold">{item.email}</Text>
-              <Text className="text-lg font-bold">
-                Data de Compra:{" "}
-                {new Date(item.purchaseDate).toLocaleDateString()}
-              </Text>
-              <Text className="text-lg font-bold">
-                Data de Expiração:{" "}
-                {new Date(item.expirationDate).toLocaleDateString()}
-              </Text>
-              <Text className="text-lg font-bold">
-                Status:{" "}
-                {checkExpirationDate(
-                  new Date(item.expirationDate).toDateString(),
-                )
-                  ? "Ativo"
-                  : "Expirado"}
-              </Text>
-              <View className="flex-row gap-x-2">
-                <Pressable
-                  className="bg-red-500 rounded-md py-2 flex-1"
-                  onPress={() => deleteUser(item._id)}
-                >
-                  <Text className="text-center text-white font-bold">
-                    Deletar
-                  </Text>
-                </Pressable>
-
-                <Pressable
-                  className="bg-yellow-500 rounded-md py-2 flex-1"
-                  onPress={() => editUser(item)}
-                >
-                  <Text className="text-center text-white font-bold">
-                    Editar
-                  </Text>
-                </Pressable>
-              </View>
-            </View>
+        <View className="w-full mb-4 rounded-md gap-y-2">
+          {showDatePicker && (
+            <DateTimePicker
+              value={date}
+              mode="date"
+              display="default"
+              onChange={onChangeDate}
+            />
           )}
-        />
+
+          <Pressable
+            className="w-full bg-primary rounded-md py-2"
+            onPress={addUser}
+          >
+            <Text className="text-center text-white font-bold">
+              {editingUser ? "Editar" : "Adicionar"}
+            </Text>
+          </Pressable>
+
+          {editingUser && (
+            <Pressable
+              className="w-full bg-red-500 rounded-md py-2"
+              onPress={() => setEditingUser(null)}
+            >
+              <Text className="text-center text-white font-bold">Cancelar</Text>
+            </Pressable>
+          )}
+        </View>
       </View>
-    </SafeAreaView>
+
+      <View className="flex-col items-center gap-y-2 mt-20">
+        <Text className="text-xl font-bold text-gray-100">
+          Usuários Cadastrados
+        </Text>
+      </View>
+
+      {users.length === 0 && (
+        <Text className="text-lg font-bold text-gray-300 text-center mt-4">
+          Nenhum usuário cadastrado
+        </Text>
+      )}
+
+      <TouchableOpacity
+        className="bg-primary rounded-full w-10 h-10 mt-4 items-center justify-center"
+        onPress={handleRefresh}
+      >
+        <Ionicons name="refresh" size={24} color="#f3f4f6" />
+      </TouchableOpacity>
+
+      <FlatList
+        data={users}
+        keyExtractor={(item) => item.email}
+        renderItem={({ item }) => (
+          <View className="border-b-2 border-primary p-4">
+            <Text className="text-lg font-bold text-primary">{item.email}</Text>
+            <Text className="text-lg font-bold text-gray-300">
+              Data de Compra:{" "}
+              {new Date(item.purchaseDate).toLocaleDateString("pt-br")}
+            </Text>
+            <Text className="text-lg font-bold text-gray-300">
+              Data de Expiração:{" "}
+              {new Date(item.expirationDate).toLocaleDateString("pt-br")}
+            </Text>
+            <Text
+              // className="text-lg font-bold text-gray-100"
+              className={`text-lg font-bold ${checkExpirationDate(new Date(item.expirationDate).toDateString()) ? "text-green-500" : "text-red-500"}`}
+            >
+              Status:{" "}
+              {checkExpirationDate(new Date(item.expirationDate).toDateString())
+                ? "Ativo"
+                : "Expirado"}
+            </Text>
+            <View className="flex-row gap-x-2">
+              <Pressable
+                className="bg-red-800 rounded-md py-2 flex-1"
+                onPress={() => deleteUser(item._id)}
+              >
+                <Text className="text-center text-white font-bold">
+                  Deletar
+                </Text>
+              </Pressable>
+
+              <Pressable
+                className="border border-primary rounded-md py-2 flex-1"
+                onPress={() => editUser(item)}
+              >
+                <Text className="text-center text-white font-bold">Editar</Text>
+              </Pressable>
+            </View>
+          </View>
+        )}
+        refreshing={refreshingPage}
+        onRefresh={handleRefresh}
+      />
+    </View>
   );
 }

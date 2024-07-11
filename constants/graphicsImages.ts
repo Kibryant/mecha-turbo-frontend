@@ -1,5 +1,5 @@
 export const graphicsImages: { [key: string]: any[] } = {
-  backNatural: [
+  backNature: [
     require("@/assets/images/graficos/back-nature/1.jpg"),
     require("@/assets/images/graficos/back-nature/2.jpg"),
   ],
@@ -26,6 +26,10 @@ export const graphicsImages: { [key: string]: any[] } = {
   collorOut: [
     require("@/assets/images/graficos/collor-out/1.jpg"),
     require("@/assets/images/graficos/collor-out/2.jpg"),
+  ],
+  collorReverse: [
+    require("@/assets/images/graficos/collor-reverse/1.jpg"),
+    require("@/assets/images/graficos/collor-reverse/2.jpg"),
   ],
   collorUp: [require("@/assets/images/graficos/collor-up/1.jpg")],
   diamondBlond: [
@@ -63,7 +67,7 @@ export const graphicsImages: { [key: string]: any[] } = {
     require("@/assets/images/graficos/sun-light/3.jpg"),
     require("@/assets/images/graficos/sun-light/4.jpg"),
   ],
-  sunLight2: [
+  sunLight20: [
     require("@/assets/images/graficos/sun-light-2/1.jpg"),
     require("@/assets/images/graficos/sun-light-2/2.jpg"),
     require("@/assets/images/graficos/sun-light-2/3.jpg"),

@@ -4,20 +4,21 @@
     "slug": "dna-mecha-turbo",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/logo/logotipo-mecha-turbo-vertical.png",
     "scheme": "dna-mecha-turbo",
     "userInterfaceStyle": "automatic",
     "splash": {
-      "image": "./assets/images/catalogo-de-referencia/1.png",
+      "image": "./assets/images/logo/logotipo-mecha-turbo-vertical.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#0D0D0D"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "dna.mecha.turbo"
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "foregroundImage": "./assets/images/logo/logotipo-mecha-turbo-vertical.png",
         "backgroundColor": "#ffffff"
       },
       "package": "com.dna.mecha.turbo"
@@ -25,10 +26,11 @@
     "web": {
       "bundler": "metro",
       "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/images/logo/logotipo-mecha-turbo-vertical.png"
     },
     "plugins": [
-      "expo-router"
+      "expo-router",
+      "expo-secure-store"
     ],
     "experiments": {
       "typedRoutes": true
