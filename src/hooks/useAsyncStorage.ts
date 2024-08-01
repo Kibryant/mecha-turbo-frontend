@@ -1,4 +1,5 @@
-import { getItem, setItem } from "@/lib/storage";
+/* eslint-disable no-undef */
+import { getItem, setItem, deleteItem } from "@/lib/storage";
 import { useReducer, useEffect, useCallback } from "react";
 import { Platform } from "react-native";
 
@@ -28,8 +29,8 @@ export async function setStorageItemAsync(key: string, value: string | null) {
       console.error("Local storage is unavailable:", e);
     }
   } else {
-    if (value == null) {
-      await getItem(key);
+    if (value === null) {
+      await deleteItem(key);
     } else {
       await setItem(key, value);
     }

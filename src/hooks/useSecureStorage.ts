@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { getToken, removeToken, saveToken } from "@/lib/secureStore";
 import { useReducer, useEffect, useCallback } from "react";
 import { Platform } from "react-native";

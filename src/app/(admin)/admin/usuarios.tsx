@@ -45,8 +45,6 @@ export default function Usuarios() {
         const userPurchaseDate = new Date(user.purchaseDate);
         const userExpirationDate = new Date(user.expirationDate);
 
-        console.log(userPurchaseDate, startDate, userExpirationDate, endDate);
-
         return (
           isSameDateOrAfterDate(userPurchaseDate, startDate) &&
           isSameDateOrBeforeDate(userExpirationDate, endDate) &&

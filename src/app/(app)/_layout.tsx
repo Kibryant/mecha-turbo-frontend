@@ -101,6 +101,13 @@ export default function Layout() {
         />
 
         <Drawer.Screen
+          name="tecnicas-especialistas/index"
+          options={{
+            drawerLabel: t("Técnicas de Especialistas"),
+          }}
+        />
+
+        <Drawer.Screen
           name="catalogo-de-referencia/[index]"
           options={{
             drawerActiveBackgroundColor: "#0D0D0D",

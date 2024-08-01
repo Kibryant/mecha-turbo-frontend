@@ -39,6 +39,10 @@ export default function Home() {
         <Button text="Eriçados e Quadrantes" href="ericado-quadrantes" />
         <Button text="Gráficos" href="graficos" />
         <Button text="Teste de Mecha" href="teste-de-mecha" />
+        <Button
+          text="Técnicas de Especialistas"
+          href="tecnicas-especialistas"
+        />
         {token && (
           <Link
             href="/admin"
