@@ -77,7 +77,7 @@ export default function EditUser({
                   onBlur={onBlur}
                   value={value}
                   placeholder="Nome"
-                  className="border border-gray-300 rounded-md p-2 w-full mb-4 text-gray-300"
+                  className="border border-gray-300 rounded-md p-2 w-full mb-4 text-gray-300 font-body"
                   placeholderTextColor="#374151"
                 />
               )}
@@ -94,27 +94,29 @@ export default function EditUser({
                   onBlur={onBlur}
                   value={value}
                   placeholder="Email"
-                  className="border border-gray-300 rounded-md p-2 w-full mb-4 text-gray-300"
+                  className="border border-gray-300 rounded-md p-2 w-full mb-4 text-gray-300 font-body"
                   placeholderTextColor="#374151"
                 />
               )}
               name="email"
             />
             {errors.email && (
-              <Text className="text-red-500">{errors.email.message}</Text>
+              <Text className="text-red-500 font-body">
+                {errors.email.message}
+              </Text>
             )}
             <Pressable
               onPress={handleSubmit(editUser)}
               disabled={isLoading}
               className="bg-primary rounded-md p-2"
             >
-              <Text className="text-gray-100">Editar</Text>
+              <Text className="text-gray-100 font-body">Editar</Text>
             </Pressable>
             <Pressable
               onPress={closeModal}
               className="bg-red-600 rounded-md p-2 mt-4"
             >
-              <Text className="text-gray-100">Cancelar</Text>
+              <Text className="text-gray-100 font-body">Cancelar</Text>
             </Pressable>
           </View>
         </View>

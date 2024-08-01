@@ -80,9 +80,9 @@ export default function Layout() {
         />
 
         <Drawer.Screen
-          name="enricado-quadrantes/index"
+          name="ericado-quadrantes/index"
           options={{
-            drawerLabel: t("Enriçados e Quadrantes"),
+            drawerLabel: t("Eriçados e Quadrantes"),
           }}
         />
 

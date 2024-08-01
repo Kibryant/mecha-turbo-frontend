@@ -34,8 +34,8 @@ export default function Item({
           source={image}
           contentFit="cover"
           onLoadEnd={() => setLoading(false)}
-          cachePolicy="memory"
-          priority="high"
+          cachePolicy="memory-disk"
+          priority={index <= 20 ? "high" : "normal"}
         />
         <View className="absolute top-3 left-3 w-8 h-8 bg-primary rounded-full items-center justify-center font-body">
           <Text className="text-gray-100 font-headingBold">{index + 1}</Text>

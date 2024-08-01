@@ -36,7 +36,7 @@ export default function Home() {
         </Text>
         <Button text="Catálogo de Referências" href="catalogo-de-referencia" />
         <Button text="Criação de Cores" href="criacao-de-cores" />
-        <Button text="Enriçados e Quadrantes" href="enricado-quadrantes" />
+        <Button text="Eriçados e Quadrantes" href="ericado-quadrantes" />
         <Button text="Gráficos" href="graficos" />
         <Button text="Teste de Mecha" href="teste-de-mecha" />
         {token && (

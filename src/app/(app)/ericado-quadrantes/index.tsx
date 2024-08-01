@@ -10,7 +10,7 @@ import * as ScreenOrientation from "expo-screen-orientation";
 import Back from "@/components/back";
 import { useTranslation } from "react-i18next";
 
-export default function EnriçadoQuadrantes() {
+export default function EriçadoQuadrantes() {
   const { width } = useWindowDimensions();
 
   const { t } = useTranslation();
@@ -34,7 +34,7 @@ export default function EnriçadoQuadrantes() {
       </View>
 
       <Text className="text-primary text-3xl font-headingBold mt-10 text-center">
-        {t("Enriçados e Quadrantes")}
+        {t("Eriçados e Quadrantes")}
       </Text>
       <View className="w-full px-4 justify-center items-center mt-4">
         <YoutubeIframe

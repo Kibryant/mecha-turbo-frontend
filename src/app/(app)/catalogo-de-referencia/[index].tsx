@@ -41,7 +41,10 @@ export default function Referencia() {
           <View className="w-full justify-end px-2 mt-4">
             <View>
               <Text className="text-xl font-headingBold text-gray-100">
-                {t("Técnica")} {hairTechnique.technique}
+                {t("Técnica")}{" "}
+                {hairTechnique.technique === "ILUMINUS BLOND"
+                  ? "ILUMINUS BLOND (FREE HANDS)"
+                  : hairTechnique.technique}
               </Text>
               <View className="mt-1">
                 <Text className="font-heading3 text-gray-300">
@@ -52,7 +55,7 @@ export default function Referencia() {
                 </Text>
                 <Text className="font-heading3 text-gray-300">
                   - {t("Ideal Para Cor Natural")}{" "}
-                  {hairTechnique.naturalColor.map((number) => number)}
+                  {hairTechnique.naturalColor.map((number) => `${number} `)}
                 </Text>
                 <Text className="font-heading3 text-gray-300">
                   -{" "}
@@ -87,7 +90,7 @@ export default function Referencia() {
 
             <View className="mt-4">
               <Link
-                href={`/graficos/${toCamelCase(hairTechnique.technique)}`}
+                href={`/graficos/${toCamelCase(hairTechnique.technique)}?url=/catalogo-de-referencia/${index}`}
                 asChild
               >
                 <TouchableOpacity className="bg-primary p-2 rounded-md">

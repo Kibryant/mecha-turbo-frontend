@@ -12,6 +12,7 @@ export const graphics = [
   "FREE HANDS",
   "GOLDEN CONTRAST",
   "ILUMINUS CORRECTION",
+  "ILUMINUS BLOND (FREE HANDS)",
   "MAXI CONTOUR",
   "SUN LIGHT",
   "SUN LIGHT 2.0",

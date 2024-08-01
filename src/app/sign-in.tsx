@@ -29,8 +29,6 @@ export default function SignIn() {
   const fadeAnim = useRef(new Animated.Value(1)).current;
   const translateYAnim = useRef(new Animated.Value(0)).current;
 
-  console.log(process.env.REACT_APP_API_URL);
-
   const {
     handleSubmit,
     control,
@@ -118,12 +116,6 @@ export default function SignIn() {
             </View>
 
             <View className="w-full flex-row justify-between">
-              <Link
-                href="/"
-                className="text-primary mb-2 text-center font-body"
-              >
-                {t("Esqueceu a senha?")}
-              </Link>
               <Link
                 href="/sign-in-adm"
                 className="text-primary mb-2 text-center font-body"

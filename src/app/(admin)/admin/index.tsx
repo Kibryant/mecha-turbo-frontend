@@ -14,7 +14,7 @@ export default function Admin() {
           <Text className="text-3xl font-headingBold text-primary">
             Olá, Administrador!
           </Text>
-          <Text className="text-lg text-gray-300">
+          <Text className="text-lg text-gray-300 text-center">
             Seja bem-vindo(a) ao Painel de Administração.
           </Text>
         </View>

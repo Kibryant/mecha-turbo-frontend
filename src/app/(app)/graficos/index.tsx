@@ -1,9 +1,9 @@
 import Back from "@/components/back";
-import Button from "@/components/button";
 import { graphics } from "@/constants/graphics";
 import { toCamelCase } from "@/utils/toCamelCase";
+import { Link } from "expo-router";
 import { useTranslation } from "react-i18next";
-import { View, Text, ScrollView } from "react-native";
+import { View, Text, ScrollView, Pressable } from "react-native";
 
 export default function Graficos() {
   const { t } = useTranslation();
@@ -25,12 +25,19 @@ export default function Graficos() {
           <Text className="text-xl font-headingBold text-gray-100">
             {t("Escolha a opção desejada")}!
           </Text>
-          {graphics.map((item, index) => (
-            <Button
-              text={item}
-              href={`graficos/${toCamelCase(item)}`}
-              key={index}
-            />
+          {graphics.map((graphic, index) => (
+            <Link
+              href={`/graficos/${toCamelCase(graphic)}?url=graficos`}
+              className="p-4 w-full  bg-primary rounded-md mt-2"
+              asChild
+              key={graphic}
+            >
+              <Pressable>
+                <Text className="text-gray-100 font-headingBold text-center">
+                  {graphic}
+                </Text>
+              </Pressable>
+            </Link>
           ))}
         </View>
       </View>

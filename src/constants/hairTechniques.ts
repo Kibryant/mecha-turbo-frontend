@@ -9,7 +9,7 @@ export const hairTechniques = [
     controlledOxVolume: 15,
     technique: "SUN LIGHT",
     image: require("@/assets/images/catalogo-de-referencia/1.png"),
-    bristled: "Enriçado do segundo quadrante",
+    bristled: "Eriçado do segundo quadrante",
   },
   {
     name: "Loiro Médio Clareamento",
@@ -22,7 +22,7 @@ export const hairTechniques = [
     teasedQuadrant: 2,
     technique: "GOLDEN CONTRAST",
     image: require("@/assets/images/catalogo-de-referencia/2.png"),
-    bristled: "Enriçado do segundo quadrante",
+    bristled: "Eriçado do segundo quadrante",
   },
   {
     name: "Loiro Claríssimo",
@@ -32,7 +32,7 @@ export const hairTechniques = [
     teasedQuadrant: 2,
     technique: "DIAMOND BLOND",
     image: require("@/assets/images/catalogo-de-referencia/3.png"),
-    bristled: "Enriçado do segundo quadrante",
+    bristled: "Eriçado do segundo quadrante",
   },
   {
     name: "Loiro Claríssimo",
@@ -43,7 +43,7 @@ export const hairTechniques = [
     teasedQuadrant: 2,
     technique: "SUN LIGHT",
     image: require("@/assets/images/catalogo-de-referencia/4.png"),
-    bristled: "Enriçado do segundo quadrante",
+    bristled: "Eriçado do segundo quadrante",
   },
   {
     name: "Loiro Claríssimo",
@@ -54,7 +54,7 @@ export const hairTechniques = [
     teasedQuadrant: 2,
     technique: "DIAMOND BLOND",
     image: require("@/assets/images/catalogo-de-referencia/5.png"),
-    bristled: "Enriçado do segundo quadrante",
+    bristled: "Eriçado do segundo quadrante",
   },
   {
     name: "Loiro Médio Clareamento",
@@ -65,7 +65,7 @@ export const hairTechniques = [
     teasedQuadrant: 2,
     technique: "DIAMOND BLOND",
     image: require("@/assets/images/catalogo-de-referencia/6.png"),
-    bristled: "Enriçado do segundo quadrante",
+    bristled: "Eriçado do segundo quadrante",
   },
   {
     name: "Loiro Claríssimo",
@@ -76,7 +76,7 @@ export const hairTechniques = [
     teasedQuadrant: 3,
     technique: "DIAMOND BLOND",
     image: require("@/assets/images/catalogo-de-referencia/7.png"),
-    bristled: "Enriçado do terceiro quadrante",
+    bristled: "Eriçado do terceiro quadrante",
   },
   {
     name: "Iluminado",
@@ -87,7 +87,7 @@ export const hairTechniques = [
     teasedQuadrant: 2,
     technique: "BACK SLICES",
     image: require("@/assets/images/catalogo-de-referencia/8.png"),
-    bristled: "Enriçado do segundo quadrante",
+    bristled: "Eriçado do segundo quadrante",
   },
   {
     name: "Loiro Claríssimo",
@@ -97,7 +97,7 @@ export const hairTechniques = [
     teasedQuadrant: 2,
     technique: "SUN LIGHT 2.0",
     image: require("@/assets/images/catalogo-de-referencia/9.png"),
-    bristled: "Enriçado do segundo quadrante",
+    bristled: "Eriçado do segundo quadrante",
   },
   {
     name: "Loiro Claríssimo",
@@ -108,7 +108,7 @@ export const hairTechniques = [
     teasedQuadrant: 3,
     technique: "DIAMOND BLOND",
     image: require("@/assets/images/catalogo-de-referencia/10.png"),
-    bristled: "Enriçado do terceiro quadrante",
+    bristled: "Eriçado do terceiro quadrante",
   },
   {
     name: "Loiro Claríssimo",
@@ -118,7 +118,7 @@ export const hairTechniques = [
     teasedQuadrant: 2,
     technique: "DIAMOND BLOND",
     image: require("@/assets/images/catalogo-de-referencia/11.png"),
-    bristled: "Enriçado do segundo quadrante",
+    bristled: "Eriçado do segundo quadrante",
   },
   {
     name: "Loiro Médio Clareamento",
@@ -129,7 +129,7 @@ export const hairTechniques = [
     teasedQuadrant: 2,
     technique: "FAST CONTRAST",
     image: require("@/assets/images/catalogo-de-referencia/12.png"),
-    bristled: "Enriçado do segundo quadrante",
+    bristled: "Eriçado do segundo quadrante",
   },
   {
     name: "Loiro Claríssimo",
@@ -139,7 +139,7 @@ export const hairTechniques = [
     teasedQuadrant: 1,
     technique: "MAXI CONTOUR",
     image: require("@/assets/images/catalogo-de-referencia/13.png"),
-    bristled: "Enriçado do primeiro quadrante",
+    bristled: "Eriçado do primeiro quadrante",
   },
   {
     name: "Loiro Médio Clareamento",
@@ -151,7 +151,7 @@ export const hairTechniques = [
     teasedQuadrant: 2,
     technique: "FREE HANDS",
     image: require("@/assets/images/catalogo-de-referencia/14.png"),
-    bristled: "Enriçado do segundo quadrante",
+    bristled: "Eriçado do segundo quadrante",
   },
   {
     name: "Loiro Claríssimo",
@@ -161,7 +161,7 @@ export const hairTechniques = [
     teasedQuadrant: 2,
     technique: "DIAMOND BLOND",
     image: require("@/assets/images/catalogo-de-referencia/15.png"),
-    bristled: "Enriçado do segundo quadrante",
+    bristled: "Eriçado do segundo quadrante",
   },
   {
     name: "Iluminado",
@@ -172,7 +172,7 @@ export const hairTechniques = [
     rootShaded: "4.0 10g + 6.0 10g + 20g emulsão ou oxidante de 5 volumes",
     technique: "GOLDEN CONTRAST",
     image: require("@/assets/images/catalogo-de-referencia/16.png"),
-    bristled: "Enriçado do segundo quadrante",
+    bristled: "Eriçado do segundo quadrante",
   },
   {
     name: "Loiro Claríssimo",
@@ -183,7 +183,7 @@ export const hairTechniques = [
     teasedQuadrant: 2,
     technique: "DIAMOND BLOND",
     image: require("@/assets/images/catalogo-de-referencia/17.png"),
-    bristled: "Enriçado do segundo quadrante",
+    bristled: "Eriçado do segundo quadrante",
   },
   {
     name: "Loiro Claríssimo",
@@ -194,7 +194,7 @@ export const hairTechniques = [
     teasedQuadrant: 2,
     technique: "DIAMOND BLOND",
     image: require("@/assets/images/catalogo-de-referencia/18.png"),
-    bristled: "Enriçado do segundo quadrante",
+    bristled: "Eriçado do segundo quadrante",
   },
   {
     name: "Loiro Claríssimo com Fundo Colorido",
@@ -205,7 +205,7 @@ export const hairTechniques = [
     teasedQuadrant: 2,
     technique: "DIAMOND BLOND",
     image: require("@/assets/images/catalogo-de-referencia/19.png"),
-    bristled: "Enriçado do segundo quadrante",
+    bristled: "Eriçado do segundo quadrante",
   },
   {
     name: "Loiro Claríssimo",
@@ -216,7 +216,7 @@ export const hairTechniques = [
     teasedQuadrant: 2,
     technique: "SUN LIGHT",
     image: require("@/assets/images/catalogo-de-referencia/20.png"),
-    bristled: "Enriçado do segundo quadrante",
+    bristled: "Eriçado do segundo quadrante",
   },
   {
     name: "Loiro Médio Clareamento",
@@ -226,7 +226,7 @@ export const hairTechniques = [
     teasedQuadrant: 2,
     technique: "ILUMINUS BLOND",
     image: require("@/assets/images/catalogo-de-referencia/21.png"),
-    bristled: "Enriçado do segundo quadrante",
+    bristled: "Eriçado do segundo quadrante",
   },
   {
     name: "Loiro Médio Clareamento",
@@ -237,7 +237,7 @@ export const hairTechniques = [
     teasedQuadrant: 2,
     technique: "DIAMOND BLOND",
     image: require("@/assets/images/catalogo-de-referencia/22.png"),
-    bristled: "Enriçado do segundo quadrante",
+    bristled: "Eriçado do segundo quadrante",
   },
   {
     name: "Loiro Médio Clareamento",
@@ -248,7 +248,7 @@ export const hairTechniques = [
     teasedQuadrant: 2,
     technique: "SUN LIGHT",
     image: require("@/assets/images/catalogo-de-referencia/23.png"),
-    bristled: "Enriçado do segundo quadrante",
+    bristled: "Eriçado do segundo quadrante",
   },
   {
     name: "Loiro Claríssimo",
@@ -259,7 +259,7 @@ export const hairTechniques = [
     teasedQuadrant: 2,
     technique: "DIAMOND BLOND",
     image: require("@/assets/images/catalogo-de-referencia/24.png"),
-    bristled: "Enriçado do segundo quadrante",
+    bristled: "Eriçado do segundo quadrante",
   },
   {
     name: "Loiro Médio Clareamento",
@@ -270,7 +270,7 @@ export const hairTechniques = [
     teasedQuadrant: 2,
     technique: "ILUMINUS BLOND",
     image: require("@/assets/images/catalogo-de-referencia/25.png"),
-    bristled: "Enriçado do segundo quadrante",
+    bristled: "Eriçado do segundo quadrante",
   },
   {
     name: "Loiro Médio Clareamento",
@@ -281,7 +281,7 @@ export const hairTechniques = [
     teasedQuadrant: 2,
     technique: "DIAMOND BLOND",
     image: require("@/assets/images/catalogo-de-referencia/26.png"),
-    bristled: "Enriçado do primeiro quadrante",
+    bristled: "Eriçado do primeiro quadrante",
   },
   {
     name: "Loiro Claríssimo",
@@ -292,7 +292,7 @@ export const hairTechniques = [
     teasedQuadrant: 2,
     technique: "SUN LIGHT",
     image: require("@/assets/images/catalogo-de-referencia/27.png"),
-    bristled: "Enriçado do segundo quadrante",
+    bristled: "Eriçado do segundo quadrante",
   },
   {
     name: "Loiro Claríssimo",
@@ -303,7 +303,7 @@ export const hairTechniques = [
     teasedQuadrant: 2,
     technique: "DIAMOND BLOND",
     image: require("@/assets/images/catalogo-de-referencia/28.png"),
-    bristled: "Enriçado do terceiro quadrante",
+    bristled: "Eriçado do terceiro quadrante",
   },
   {
     name: "Iluminado",
@@ -314,7 +314,7 @@ export const hairTechniques = [
     teasedQuadrant: 2,
     technique: "ILUMINUS BLOND",
     image: require("@/assets/images/catalogo-de-referencia/29.png"),
-    bristled: "Enriçado do segundo quadrante",
+    bristled: "Eriçado do segundo quadrante",
   },
   {
     name: "Iluminado",
@@ -325,7 +325,7 @@ export const hairTechniques = [
     teasedQuadrant: 2,
     technique: "DIAMOND BLOND",
     image: require("@/assets/images/catalogo-de-referencia/30.png"),
-    bristled: "Enriçado do segundo quadrante",
+    bristled: "Eriçado do segundo quadrante",
   },
   {
     name: "Loiro Claríssimo",
@@ -336,7 +336,7 @@ export const hairTechniques = [
     teasedQuadrant: 2,
     technique: "SUN LIGHT",
     image: require("@/assets/images/catalogo-de-referencia/31.png"),
-    bristled: "Enriçado do segundo quadrante",
+    bristled: "Eriçado do segundo quadrante",
   },
   {
     name: "Loiro Claríssimo",
@@ -347,7 +347,7 @@ export const hairTechniques = [
     teasedQuadrant: 2,
     technique: "DIAMOND BLOND",
     image: require("@/assets/images/catalogo-de-referencia/32.png"),
-    bristled: "Enriçado do segundo quadrante",
+    bristled: "Eriçado do segundo quadrante",
   },
   {
     name: "Loiro Claríssimo",
@@ -358,7 +358,7 @@ export const hairTechniques = [
     teasedQuadrant: 2,
     technique: "ILUMINUS BLOND",
     image: require("@/assets/images/catalogo-de-referencia/33.png"),
-    bristled: "Enriçado do segundo quadrante",
+    bristled: "Eriçado do segundo quadrante",
   },
   {
     name: "Loiro Claríssimo",
@@ -369,7 +369,7 @@ export const hairTechniques = [
     teasedQuadrant: 2,
     technique: "DIAMOND BLOND",
     image: require("@/assets/images/catalogo-de-referencia/34.png"),
-    bristled: "Enriçado do primeiro quadrante",
+    bristled: "Eriçado do primeiro quadrante",
   },
   {
     name: "Loiro Claríssimo",
@@ -380,7 +380,7 @@ export const hairTechniques = [
     teasedQuadrant: 2,
     technique: "SUN LIGHT",
     image: require("@/assets/images/catalogo-de-referencia/35.png"),
-    bristled: "Enriçado do segundo quadrante",
+    bristled: "Eriçado do segundo quadrante",
   },
   {
     name: "Loiro Claríssimo",
@@ -391,7 +391,7 @@ export const hairTechniques = [
     teasedQuadrant: 2,
     technique: "DIAMOND BLOND",
     image: require("@/assets/images/catalogo-de-referencia/36.png"),
-    bristled: "Enriçado do segundo quadrante",
+    bristled: "Eriçado do segundo quadrante",
   },
   {
     name: "Loiro Claríssimo",
@@ -402,7 +402,7 @@ export const hairTechniques = [
     teasedQuadrant: 2,
     technique: "ILUMINUS BLOND",
     image: require("@/assets/images/catalogo-de-referencia/37.png"),
-    bristled: "Enriçado do segundo quadrante",
+    bristled: "Eriçado do segundo quadrante",
   },
   {
     name: "Loiro Claríssimo",
@@ -413,7 +413,7 @@ export const hairTechniques = [
     teasedQuadrant: 2,
     technique: "DIAMOND BLOND",
     image: require("@/assets/images/catalogo-de-referencia/38.png"),
-    bristled: "Enriçado do segundo quadrante",
+    bristled: "Eriçado do segundo quadrante",
   },
   {
     name: "Loiro Claríssimo",
@@ -424,7 +424,7 @@ export const hairTechniques = [
     teasedQuadrant: 2,
     technique: "SUN LIGHT",
     image: require("@/assets/images/catalogo-de-referencia/39.png"),
-    bristled: "Enriçado do segundo quadrante",
+    bristled: "Eriçado do segundo quadrante",
   },
   {
     name: "Iluminado",
@@ -435,7 +435,7 @@ export const hairTechniques = [
     teasedQuadrant: 2,
     technique: "DIAMOND BLOND",
     image: require("@/assets/images/catalogo-de-referencia/40.png"),
-    bristled: "Enriçado do segundo quadrante",
+    bristled: "Eriçado do segundo quadrante",
   },
   {
     name: "Iluminado",
@@ -446,7 +446,7 @@ export const hairTechniques = [
     teasedQuadrant: 2,
     technique: "ILUMINUS BLOND",
     image: require("@/assets/images/catalogo-de-referencia/41.png"),
-    bristled: "Enriçado do segundo quadrante",
+    bristled: "Eriçado do segundo quadrante",
   },
   {
     name: "Iluminado",
@@ -457,7 +457,7 @@ export const hairTechniques = [
     teasedQuadrant: 2,
     technique: "DIAMOND BLOND",
     image: require("@/assets/images/catalogo-de-referencia/42.png"),
-    bristled: "Enriçado do segundo quadrante",
+    bristled: "Eriçado do segundo quadrante",
   },
   {
     name: "Iluminado",
@@ -468,7 +468,7 @@ export const hairTechniques = [
     teasedQuadrant: 2,
     technique: "SUN LIGHT",
     image: require("@/assets/images/catalogo-de-referencia/43.png"),
-    bristled: "Enriçado do segundo quadrante",
+    bristled: "Eriçado do segundo quadrante",
   },
   {
     name: "Loiro Dourado",
@@ -479,7 +479,7 @@ export const hairTechniques = [
     teasedQuadrant: 2,
     technique: "SUN LIGHT",
     image: require("@/assets/images/catalogo-de-referencia/44.png"),
-    bristled: "Enriçado do segundo quadrante",
+    bristled: "Eriçado do segundo quadrante",
   },
   {
     name: "Iluminado Suave",
@@ -489,7 +489,7 @@ export const hairTechniques = [
     teasedQuadrant: 3,
     technique: "FREE HANDS",
     image: require("@/assets/images/catalogo-de-referencia/45.png"),
-    bristled: "Enriçado do terceiro quadrante",
+    bristled: "Eriçado do terceiro quadrante",
   },
   {
     name: "Iluminado Médio",
@@ -500,7 +500,7 @@ export const hairTechniques = [
     teasedQuadrant: 2,
     technique: "FAST CONTRAST",
     image: require("@/assets/images/catalogo-de-referencia/46.png"),
-    bristled: "Enriçado do segundo quadrante",
+    bristled: "Eriçado do segundo quadrante",
   },
   {
     name: "Loiro Dourado",
@@ -511,7 +511,7 @@ export const hairTechniques = [
     teasedQuadrant: 2,
     technique: "DIAMOND BLOND",
     image: require("@/assets/images/catalogo-de-referencia/47.png"),
-    bristled: "Enriçado do segundo quadrante",
+    bristled: "Eriçado do segundo quadrante",
   },
   {
     name: "Loiro Claro com Contraste",
@@ -522,7 +522,7 @@ export const hairTechniques = [
     teasedQuadrant: 2,
     technique: "DIAMOND BLOND",
     image: require("@/assets/images/catalogo-de-referencia/48.png"),
-    bristled: "Enriçado do segundo quadrante",
+    bristled: "Eriçado do segundo quadrante",
   },
   {
     name: "Iluminado Médio",
@@ -532,6 +532,6 @@ export const hairTechniques = [
     teasedQuadrant: 2,
     technique: "BACK SLICES",
     image: require("@/assets/images/catalogo-de-referencia/49.png"),
-    bristled: "Enriçado do segundo quadrante",
+    bristled: "Eriçado do segundo quadrante",
   },
 ];

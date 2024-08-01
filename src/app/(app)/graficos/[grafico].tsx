@@ -6,7 +6,10 @@ import { View, Text, ScrollView } from "react-native";
 import { Image } from "expo-image";
 
 export default function Grafico() {
-  const { grafico } = useLocalSearchParams();
+  const { grafico, url } = useLocalSearchParams<{
+    grafico: string;
+    url?: string;
+  }>();
 
   const graphicImages = graphicsImages[grafico as string];
 
@@ -14,7 +17,7 @@ export default function Grafico() {
     <ScrollView className="bg-secondary px-2">
       <View>
         <View className="w-full mt-2">
-          <Back to="/graficos" />
+          <Back to={url ?? "/graficos"} />
         </View>
 
         <View className="mt-4">

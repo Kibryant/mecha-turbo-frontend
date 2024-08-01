@@ -56,6 +56,10 @@ export const graphicsImages: { [key: string]: any[] } = {
     require("@/assets/images/graficos/iluminus-correction/2.jpg"),
     require("@/assets/images/graficos/iluminus-correction/3.jpg"),
   ],
+  iluminusBlond: [
+    require("@/assets/images/graficos/iluminus-blond/1.jpg"),
+    require("@/assets/images/graficos/iluminus-blond/2.jpg"),
+  ],
   maxiContour: [
     require("@/assets/images/graficos/maxi-contour/1.jpg"),
     require("@/assets/images/graficos/maxi-contour/2.jpg"),

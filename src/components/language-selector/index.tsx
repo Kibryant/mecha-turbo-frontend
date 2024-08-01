@@ -10,9 +10,7 @@ export default function LanguageSelector() {
   const { t, i18n } = useTranslation();
 
   const changeLanguage = (lng: string) => {
-    i18n.changeLanguage(lng).then(() => {
-      console.log(i18n.language);
-    });
+    i18n.changeLanguage(lng);
   };
 
   return (

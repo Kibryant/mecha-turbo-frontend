@@ -109,9 +109,6 @@ export default function SignInAdm() {
             </View>
 
             <View className="w-full flex-row justify-between">
-              <Link href="/admin" className="text-primary mb-2 text-center">
-                Esqueceu a senha?
-              </Link>
               <Link href="/sign-in" className="text-primary mb-2 text-center">
                 {t("Acessar como usuário")}
               </Link>
@@ -122,7 +119,7 @@ export default function SignInAdm() {
                 control={control}
                 render={({ field: { onChange, onBlur } }) => (
                   <TextInput
-                    className="w-full px-2 py-3 border rounded-md border-gray-700"
+                    className="w-full px-2 py-3 border rounded-md border-gray-700 font-body"
                     placeholder={t("Código de acesso")}
                     keyboardType="number-pad"
                     accessibilityLabel={t("Código de acesso")}
@@ -150,7 +147,7 @@ export default function SignInAdm() {
                 control={control}
                 render={({ field: { onChange, onBlur } }) => (
                   <TextInput
-                    className="w-full px-2 py-3 border rounded-md border-gray-700"
+                    className="w-full px-2 py-3 border rounded-md border-gray-700 font-body"
                     placeholder="Email"
                     keyboardType="email-address"
                     accessibilityLabel="Email"
@@ -178,7 +175,7 @@ export default function SignInAdm() {
                 control={control}
                 render={({ field: { onChange, onBlur } }) => (
                   <TextInput
-                    className="w-full px-2 py-3 border rounded-md border-gray-700"
+                    className="w-full px-2 py-3 border rounded-md border-gray-700 font-body"
                     placeholder={t("Senha")}
                     secureTextEntry
                     accessibilityLabel={t("Senha")}

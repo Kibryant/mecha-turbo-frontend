@@ -26,7 +26,7 @@
     "web": {
       "bundler": "metro",
       "output": "static",
-      "favicon": "./public/logotipo-mecha-turbo-vertical.png"
+      "favicon": "./public/logotipo-mecha-turbo-vertical-icon.png"
     },
     "plugins": [
       "expo-router",
@@ -42,7 +42,7 @@
         "origin": false
       },
       "eas": {
-        "projectId": "f84aa748-a832-4cd4-be51-09f5fbab4bfe"
+        "projectId": "ed4b656f-bbb3-4f59-9a26-365936bee9e9"
       }
     }
   }
