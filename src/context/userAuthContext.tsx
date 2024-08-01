@@ -46,32 +46,21 @@ export function UserProvider(props: PropsWithChildren) {
       value={{
         signIn: async ({ email, password }) => {
           try {
-            // const response = await api.post("/login", { email, password });
+            const response = await api.post("/login", { email, password });
 
-            // const { message, status, user } = response.data;
+            const { message, status, user } = response.data;
 
-            // if (status !== HttpStatusCode.Ok) {
-            //   Alert.alert("Erro", message);
-            //   return { success: false };
-            // }
+            if (status !== HttpStatusCode.Ok) {
+              Alert.alert("Erro", message);
+              return { success: false };
+            }
 
-            // if (!isSubscriptionActive(user.expirationDate)) {
-            //   Alert.alert("Erro", "Conta expirada.");
-            //   return { success: false };
-            // }
+            if (!isSubscriptionActive(user.expirationDate)) {
+              Alert.alert("Erro", "Conta expirada.");
+              return { success: false };
+            }
 
-            // setUser(JSON.stringify(user));
-
-            setUser(
-              JSON.stringify({
-                name: "Arthur Gustavo",
-                email,
-                password,
-                expirationDate: new Date().setFullYear(
-                  new Date().getFullYear() + 1,
-                ),
-              }),
-            );
+            setUser(JSON.stringify(user));
 
             return { success: true };
           } catch (error) {
