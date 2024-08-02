@@ -13,15 +13,13 @@
       "backgroundColor": "#0D0D0D"
     },
     "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "br.com.dna.mecha.turbo"
+      "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./public/logotipo-mecha-turbo-vertical-adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      },
-      "package": "com.dna.mecha.turbo"
+      }
     },
     "web": {
       "bundler": "metro",
@@ -40,9 +38,6 @@
     "extra": {
       "router": {
         "origin": false
-      },
-      "eas": {
-        "projectId": "9f196713-2613-46ec-bd64-366b0c1790bc"
       }
     }
   }
