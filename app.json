@@ -14,7 +14,7 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "dna.mecha.turbo"
+      "bundleIdentifier": "br.com.dna.mecha.turbo"
     },
     "android": {
       "adaptiveIcon": {
@@ -40,6 +40,9 @@
     "extra": {
       "router": {
         "origin": false
+      },
+      "eas": {
+        "projectId": "9f196713-2613-46ec-bd64-366b0c1790bc"
       }
     }
   }
