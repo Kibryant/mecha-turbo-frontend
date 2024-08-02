@@ -1,11 +1,11 @@
 {
   "expo": {
     "name": "mecha-turbo",
-    "slug": "DNA-mecha-turbo",
+    "slug": "dna-mecha-turbo",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./public/logotipo-mecha-turbo-vertical-icon.png",
-    "scheme": "DNA da Mecha Turbo",
+    "scheme": "dna-mecha-turbo",
     "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./public/logotipo-mecha-turbo-vertical-splash.png",
@@ -13,7 +13,8 @@
       "backgroundColor": "#0D0D0D"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "br.com.dna.mecha.turbo"
     },
     "android": {
       "adaptiveIcon": {
@@ -38,6 +39,9 @@
     "extra": {
       "router": {
         "origin": false
+      },
+      "eas": {
+        "projectId": "554f72c0-4c21-4544-9ecf-c640844fe986"
       }
     }
   }
