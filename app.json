@@ -13,15 +13,13 @@
       "backgroundColor": "#0D0D0D"
     },
     "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "com.br.dnamechaturbo"
+      "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./public/logotipo-mecha-turbo-vertical-adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      },
-      "package": "com.br.dnamechaturbo"
+      }
     },
     "web": {
       "bundler": "metro",
@@ -41,9 +39,6 @@
     "extra": {
       "router": {
         "origin": false
-      },
-      "eas": {
-        "projectId": "3295f100-4a00-48cc-b011-4639a06e0132"
       }
     }
   }
