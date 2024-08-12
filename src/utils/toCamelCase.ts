@@ -1,5 +1,5 @@
 export const toCamelCase = (str: string) => {
-  if (str === "ILUMINUS BLOND (FREE HANDS)") return "iluminusBlond";
+  if (str === "ILUMINUS BLOND (FREE HANDS)") return "freeHands";
   return str
     .toLowerCase()
     .replace(/[- ](.)/g, (match, group1) => group1.toUpperCase())
