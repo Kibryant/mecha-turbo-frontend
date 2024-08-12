@@ -1,8 +1,11 @@
 import Back from "@/components/back";
+import { useLocalSearchParams } from "expo-router";
 import { useTranslation } from "react-i18next";
 import { View, Text, Linking, TouchableOpacity } from "react-native";
 
 export default function TecnicasEspecialistas() {
+  const { url } = useLocalSearchParams<{ url?: string }>();
+
   const { t } = useTranslation();
 
   const openLink = (url: string) => {
@@ -12,7 +15,7 @@ export default function TecnicasEspecialistas() {
   return (
     <View className="bg-secondary flex-1 items-center">
       <View className="w-full mt-2">
-        <Back to="/" />
+        <Back to={url ? url : "/"} />
       </View>
 
       <Text className="text-primary text-3xl font-headingBold mt-10">
@@ -21,7 +24,7 @@ export default function TecnicasEspecialistas() {
       <View className="w-full px-4 justify-center items-center mt-4">
         <View className="w-full border border-primary rounded-md p-4">
           <Text className="text-gray-100 font-headingBold text-left">
-            {t("É nossa aluna? Acesse o conteúdo exclusivo!")}
+            {t("É nossa aluna? Acesse o conteúdo!")}
           </Text>
           <TouchableOpacity
             onPress={() =>

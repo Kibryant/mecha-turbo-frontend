@@ -4,7 +4,7 @@ import { Pressable, View, Text, ActivityIndicator } from "react-native";
 import { Image } from "expo-image";
 import { useTranslation } from "react-i18next";
 
-export default function Item({
+export default function Catalog({
   index,
   image,
 }: {

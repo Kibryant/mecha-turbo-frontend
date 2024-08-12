@@ -9,6 +9,7 @@ import YoutubeIframe from "react-native-youtube-iframe";
 import * as ScreenOrientation from "expo-screen-orientation";
 import Back from "@/components/back";
 import { useTranslation } from "react-i18next";
+import Button from "@/components/button";
 
 export default function TesteDeMecha() {
   const { width } = useWindowDimensions();
@@ -36,16 +37,21 @@ export default function TesteDeMecha() {
       <Text className="text-primary text-3xl font-headingBold mt-10">
         {t("Teste de Mecha")}
       </Text>
-      <View className="w-full px-4 justify-center items-center mt-4">
+      <View className="w-full px-4 justify-center items-center mt-8">
         <YoutubeIframe
           videoId="0y2aMvCqdKE"
-          height={isVideoReady ? 400 : 0}
+          height={isVideoReady ? 200 : 0}
           width={VIDEO_WIDTH}
           onReady={() => setIsVideoReady(true)}
           onFullScreenChange={onFullScreenChange}
         />
-
         {!isVideoReady && <ActivityIndicator size="large" color="#fe017f" />}
+        <View className="mt-2 w-full">
+          <Button
+            href="tecnicas-especialistas?url=/teste-de-mecha"
+            text="Assistir mais aulas"
+          />
+        </View>
       </View>
     </View>
   );

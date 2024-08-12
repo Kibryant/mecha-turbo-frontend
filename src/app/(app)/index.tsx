@@ -5,7 +5,8 @@ import { useAuthUser } from "@/context/userAuthContext";
 import { User } from "@/core/user";
 import { Link } from "expo-router";
 import { useTranslation } from "react-i18next";
-import { View, Text, Image, Pressable } from "react-native";
+import { View, Text, Pressable } from "react-native";
+import { Image } from "expo-image";
 
 export default function Home() {
   const { user, signOut } = useAuthUser();
@@ -74,6 +75,7 @@ export default function Home() {
           width: 100,
           height: 100,
         }}
+        priority="high"
       />
     </View>
   );

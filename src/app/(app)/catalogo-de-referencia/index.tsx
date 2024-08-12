@@ -1,6 +1,6 @@
 import { View, Text } from "react-native";
 import { hairTechniques } from "@/constants/hairTechniques";
-import Item from "@/components/Item";
+import Catalog from "@/components/catalog";
 import Back from "@/components/back";
 import { FlashList } from "@shopify/flash-list";
 import { useTranslation } from "react-i18next";
@@ -24,7 +24,7 @@ export default function CatalogoDeReferencia() {
       <FlashList
         data={hairTechniques}
         renderItem={({ item, index }) => (
-          <Item index={index} image={item.image} />
+          <Catalog index={index} image={item.image} />
         )}
         keyExtractor={(_, index) => index.toString()}
         numColumns={2}
