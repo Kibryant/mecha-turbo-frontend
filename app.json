@@ -2,7 +2,7 @@
   "expo": {
     "name": "DNA da Mecha Turbo",
     "slug": "dna-mecha-turbo",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "orientation": "portrait",
     "icon": "./public/logotipo-mecha-turbo-vertical-icon.png",
     "scheme": "dna-mecha-turbo",
@@ -45,6 +45,12 @@
       "eas": {
         "projectId": "a97f4c2b-7575-48a0-8b9b-b2f882976c21"
       }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/a97f4c2b-7575-48a0-8b9b-b2f882976c21"
     }
   }
 }
