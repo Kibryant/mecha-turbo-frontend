@@ -3,20 +3,20 @@ import {
   View,
   Text,
   TextInput,
-  Image,
   TouchableOpacity,
   ActivityIndicator,
   Animated,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Link, useRouter } from "expo-router";
-import { logoVertical } from "@/constants/logo";
 import { useAuthAdmin } from "@/context/adminAuthContext";
 import { useTranslation } from "react-i18next";
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { SignInAdmSchema, signInAdmSchema } from "@/lib/schemas";
 import LanguageSelector from "@/components/language-selector";
+import Footer from "@/components/footer";
+import Header from "@/components/header";
 
 export default function SignInAdm() {
   const router = useRouter();
@@ -91,9 +91,7 @@ export default function SignInAdm() {
       <View className="flex-1 items-center justify-center p-4">
         <LanguageSelector />
 
-        <Animated.View style={{ opacity: fadeAnim }}>
-          <Image source={logoVertical} style={{ width: 300, height: 300 }} />
-        </Animated.View>
+        <Header fadeAnim={fadeAnim} />
 
         <Animated.View
           style={{ transform: [{ translateY: translateYAnim }], width: "100%" }}
@@ -214,11 +212,7 @@ export default function SignInAdm() {
           </View>
         </Animated.View>
 
-        <View className="absolute bottom-2">
-          <Text className="text-primary text-xs">
-            &copy; {t("Todos os direitos reservados DNA MECHA TURBO")}
-          </Text>
-        </View>
+        <Footer />
       </View>
     </SafeAreaView>
   );

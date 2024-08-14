@@ -55,7 +55,7 @@ export default function Referencia() {
                 </Text>
                 <Text className="font-heading3 text-gray-300">
                   - {t("Ideal Para Cor Natural")}{" "}
-                  {hairTechnique.naturalColor.map((number) => `${number} `)}
+                  {hairTechnique.naturalColor.join(", ")}
                 </Text>
                 <Text className="font-heading3 text-gray-300">
                   -{" "}

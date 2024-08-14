@@ -3,14 +3,12 @@ import {
   View,
   Text,
   TextInput,
-  Image,
   ActivityIndicator,
   TouchableOpacity,
   Animated,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Link, Redirect, useRouter } from "expo-router";
-import { logoVertical } from "@/constants/logo";
 import { useAuthUser } from "@/context/userAuthContext";
 import { User } from "@/core/user";
 import { useTranslation } from "react-i18next";
@@ -19,6 +17,8 @@ import { useForm, Controller, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { SignInSchema, signInSchema } from "@/lib/schemas";
 import { useAuthAdmin } from "@/context/adminAuthContext";
+import Footer from "@/components/footer";
+import Header from "@/components/header";
 
 export default function SignIn() {
   const router = useRouter();
@@ -98,9 +98,7 @@ export default function SignIn() {
       <View className="flex-1 items-center justify-center p-4">
         <LanguageSelector />
 
-        <Animated.View style={{ opacity: fadeAnim }}>
-          <Image source={logoVertical} style={{ width: 280, height: 280 }} />
-        </Animated.View>
+        <Header fadeAnim={fadeAnim} />
 
         <Animated.View
           style={{ transform: [{ translateY: translateYAnim }], width: "100%" }}
@@ -197,11 +195,7 @@ export default function SignIn() {
           </View>
         </Animated.View>
 
-        <View className="absolute bottom-2">
-          <Text className="text-primary text-xs font-body">
-            &copy; {t("Todos os direitos reservados DNA MECHA TURBO")}
-          </Text>
-        </View>
+        <Footer />
       </View>
     </SafeAreaView>
   );

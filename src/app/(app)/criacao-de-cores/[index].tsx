@@ -36,7 +36,11 @@ export default function CriacaoDeCor() {
           </Text>
           <View className="mt-1">
             <Text className="font-heading3 text-gray-300">
-              {t(color.description)}
+              - {t(color.description)} {color.brand}
+            </Text>
+            <Text className="font-heading3 text-gray-300">
+              - {t("Fundo de Clareamento")}{" "}
+              {color.whiteningBackground.join(", ")}
             </Text>
           </View>
         </View>
