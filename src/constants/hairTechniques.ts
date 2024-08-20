@@ -4,7 +4,7 @@ export const hairTechniques = [
     base: 10,
     naturalColor: [4],
     tonalization:
-      "10.1 5g + 9.89 10g + 30g de emulsão de tonalizante ou oxidante de 5 volumes",
+      "10.1 5g + 9.89 (TRUSS) 10g + 30g de emulsão de tonalizante ou oxidante de 5 volumes",
     teasedQuadrant: 2,
     controlledOxVolume: 15,
     technique: "SUN LIGHT",
@@ -17,7 +17,7 @@ export const hairTechniques = [
     contour: 9,
     naturalColor: [4, 5, 6],
     tonalization:
-      "8.1 5g + 8.0 10g + 30g de emulsão de tonalizante ou oxidante de 5 volumes",
+      "8.1 5g + 8.0 (TRUSS) 10g + 30g de emulsão de tonalizante ou oxidante de 5 volumes",
     separateContour: true,
     teasedQuadrant: 2,
     technique: "GOLDEN CONTRAST",
@@ -39,7 +39,7 @@ export const hairTechniques = [
     base: 9,
     naturalColor: [4, 5],
     tonalization:
-      "15g de 9.89 + 30g de emulsão de tonalizante ou oxidante de 5 volumes",
+      "15g de 9.89 (TRUSS) + 30g de emulsão de tonalizante ou oxidante de 5 volumes",
     teasedQuadrant: 2,
     technique: "SUN LIGHT",
     image: require("@/assets/images/catalogo-de-referencia/4.png"),
@@ -50,7 +50,7 @@ export const hairTechniques = [
     base: 9,
     naturalColor: [5],
     tonalization:
-      "9.0 5g + 9.89 10g + 30g de emulsão de tonalizante ou oxidante de 5 volumes",
+      "9.0 5g + 9.89 (TRUSS) 10g + 30g de emulsão de tonalizante ou oxidante de 5 volumes",
     teasedQuadrant: 2,
     technique: "DIAMOND BLOND",
     image: require("@/assets/images/catalogo-de-referencia/5.png"),
@@ -61,7 +61,7 @@ export const hairTechniques = [
     base: 9,
     naturalColor: [4, 5, 6],
     tonalization:
-      "9.0 5g + 9.3 10g + 30g de emulsão de tonalizante ou oxidante de 5 volumes",
+      "9.0 5g + 9/03 (WELLA) 10g + 30g de emulsão de tonalizante ou oxidante de 5 volumes",
     teasedQuadrant: 2,
     technique: "DIAMOND BLOND",
     image: require("@/assets/images/catalogo-de-referencia/6.png"),
@@ -72,7 +72,7 @@ export const hairTechniques = [
     base: 9,
     naturalColor: [3, 4, 5],
     tonalization:
-      "9.1 5g + 9.89 10g + 30g de emulsão de tonalizante ou oxidante de 5 volumes",
+      "9.1 5g + 9.89 (TRUSS) 10g + 30g de emulsão de tonalizante ou oxidante de 5 volumes",
     teasedQuadrant: 3,
     technique: "DIAMOND BLOND",
     image: require("@/assets/images/catalogo-de-referencia/7.png"),
@@ -83,7 +83,7 @@ export const hairTechniques = [
     base: 7,
     naturalColor: [3, 4, 5],
     tonalization:
-      "7.0 5g + 7.1 10g + 30g de emulsão de tonalizante ou oxidante de 5 volumes",
+      "7.0 5g + 7.1 (TRUSS) 10g + 30g de emulsão de tonalizante ou oxidante de 5 volumes",
     teasedQuadrant: 2,
     technique: "BACK SLICES",
     image: require("@/assets/images/catalogo-de-referencia/8.png"),
@@ -104,7 +104,7 @@ export const hairTechniques = [
     base: 9,
     naturalColor: [4, 5, 6],
     tonalization:
-      "9.1 5g + 9.89 10g + 30g de emulsão de tonalizante ou oxidante de 5 volumes",
+      "9.1 5g + 9.89 (TRUSS) 10g + 30g de emulsão de tonalizante ou oxidante de 5 volumes",
     teasedQuadrant: 3,
     technique: "DIAMOND BLOND",
     image: require("@/assets/images/catalogo-de-referencia/10.png"),
@@ -125,7 +125,7 @@ export const hairTechniques = [
     base: 8,
     naturalColor: [3, 5],
     tonalization:
-      "8.0 5g + 8.1 10g + 30g de emulsão de tonalizante ou oxidante de 5 volumes",
+      "8.0 5g + 8.1 (TRUSS) 10g + 30g de emulsão de tonalizante ou oxidante de 5 volumes",
     teasedQuadrant: 2,
     technique: "FAST CONTRAST",
     image: require("@/assets/images/catalogo-de-referencia/12.png"),
@@ -147,7 +147,7 @@ export const hairTechniques = [
     contour: 9,
     naturalColor: [3, 4, 5],
     tonalization:
-      "8.0 5g + 8.13 10g + 30g de emulsão de tonalizante ou oxidante de 5 volumes",
+      "8.0 5g + 8.13 (WELLA) 10g + 30g de emulsão de tonalizante ou oxidante de 5 volumes",
     teasedQuadrant: 2,
     technique: "FREE HANDS",
     image: require("@/assets/images/catalogo-de-referencia/14.png"),
@@ -167,7 +167,7 @@ export const hairTechniques = [
     name: "Iluminado",
     base: 8,
     naturalColor: [3, 4, 5],
-    tonalization: "8/37 + 7/43 (wella ilumina)",
+    tonalization: "8/37 + 7/43 (WELLA)",
     teasedQuadrant: 2,
     rootShaded: "4.0 10g + 6.0 10g + 20g emulsão ou oxidante de 5 volumes",
     technique: "GOLDEN CONTRAST",
@@ -179,7 +179,7 @@ export const hairTechniques = [
     base: 9,
     naturalColor: [3, 4, 5],
     tonalization:
-      "9.1 5g + 9.89 10g + 30g de emulsão de tonalizante ou oxidante de 5 volumes",
+      "9.1 5g + 9.89 (TRUSS) 10g + 30g de emulsão de tonalizante ou oxidante de 5 volumes",
     teasedQuadrant: 2,
     technique: "DIAMOND BLOND",
     image: require("@/assets/images/catalogo-de-referencia/17.png"),
@@ -190,7 +190,7 @@ export const hairTechniques = [
     base: 9,
     naturalColor: [4, 5, 6],
     tonalization:
-      "9.0 5g + 9.3 10g + 30g de emulsão de tonalizante ou oxidante de 5 volumes",
+      "9.0 5g + 9/03 (WELLA) 10g + 30g de emulsão de tonalizante ou oxidante de 5 volumes",
     teasedQuadrant: 2,
     technique: "DIAMOND BLOND",
     image: require("@/assets/images/catalogo-de-referencia/18.png"),
@@ -212,7 +212,7 @@ export const hairTechniques = [
     base: 9,
     naturalColor: [3, 4, 5],
     tonalization:
-      "9/0 10g + 9/60 10g (wella ilumina) + 40g de emulsão de tonalizante ou oxidante de 5 volumes",
+      "9/0 10g + 9/60 10g (WELLA) + 40g de emulsão de tonalizante ou oxidante de 5 volumes",
     teasedQuadrant: 2,
     technique: "SUN LIGHT",
     image: require("@/assets/images/catalogo-de-referencia/20.png"),
@@ -233,7 +233,7 @@ export const hairTechniques = [
     base: 9,
     naturalColor: [4, 5, 6],
     tonalization:
-      "9/7 10g + 8/38 10g (wella ilumina) + 40g de emulsão de tonalizante ou oxidante de 5 volumes",
+      "9/7 10g + 8/38 10g (WELLA) + 40g de emulsão de tonalizante ou oxidante de 5 volumes",
     teasedQuadrant: 2,
     technique: "DIAMOND BLOND",
     image: require("@/assets/images/catalogo-de-referencia/22.png"),
@@ -244,7 +244,7 @@ export const hairTechniques = [
     base: 9,
     naturalColor: [4, 5, 6],
     tonalization:
-      "8/05 5G + 9.43 5G + 10/0 5G (wella ilumina) + 30g de emulsão de tonalizante ou oxidante de 5 volumes",
+      "8/05 5G + 9.43 5G + 10/0 5G (WELLA) + 30g de emulsão de tonalizante ou oxidante de 5 volumes",
     teasedQuadrant: 2,
     technique: "SUN LIGHT 2.0",
     image: require("@/assets/images/catalogo-de-referencia/23.png"),
@@ -265,7 +265,7 @@ export const hairTechniques = [
     base: 8,
     naturalColor: [3, 4, 5],
     tonalization:
-      "8.1 5g + 8.0 10g + 30g de emulsão de tonalizante ou oxidante de 5 volumes",
+      "8.1 5g + 8.0 (TRUSS) 10g + 30g de emulsão de tonalizante ou oxidante de 5 volumes",
     teasedQuadrant: 2,
     technique: "FAST CONTRAST",
     image: require("@/assets/images/catalogo-de-referencia/25.png"),
@@ -276,7 +276,7 @@ export const hairTechniques = [
     base: 10,
     naturalColor: [4, 5, 6],
     tonalization:
-      "10/69 5g + 10/69 10g (wella ilumina) + 30g de emulsão de tonalizante ou oxidante de 5 volumes",
+      "10/69 5g + 10/69 10g (WELLA) + 30g de emulsão de tonalizante ou oxidante de 5 volumes",
     teasedQuadrant: 2,
     technique: "MAXI CONTOUR",
     image: require("@/assets/images/catalogo-de-referencia/26.png"),
@@ -297,7 +297,7 @@ export const hairTechniques = [
     base: 9,
     naturalColor: [3, 4, 5],
     tonalization:
-      "10/36 5g + 9/0 10g (wella ilumina) + 30g de emulsão de tonalizante ou oxidante de 5 volumes",
+      "10/36 5g + 9/0 10g (WELLA) + 30g de emulsão de tonalizante ou oxidante de 5 volumes",
     teasedQuadrant: 2,
     technique: "DIAMOND BLOND",
     image: require("@/assets/images/catalogo-de-referencia/28.png"),
@@ -308,7 +308,7 @@ export const hairTechniques = [
     base: 6,
     naturalColor: [3, 4, 5],
     tonalization:
-      "6/77 10g + 7/43 10g (wella ilumina) + 40g de emulsão de tonalizante ou oxidante de 5 volumes",
+      "6/77 10g + 7/43 10g (WELLA) + 40g de emulsão de tonalizante ou oxidante de 5 volumes",
     teasedQuadrant: 2,
     technique: "FREE HANDS",
     image: require("@/assets/images/catalogo-de-referencia/29.png"),
@@ -329,7 +329,7 @@ export const hairTechniques = [
     base: 9,
     naturalColor: [4, 5, 6],
     tonalization:
-      "9/0 10g + 10/69 5g (wella ilumina) + 30g de emulsão de tonalizante ou oxidante de 5 volumes",
+      "9/0 10g + 10/69 5g (WELLA) + 30g de emulsão de tonalizante ou oxidante de 5 volumes",
     teasedQuadrant: 2,
     technique: "DIAMOND BLOND",
     image: require("@/assets/images/catalogo-de-referencia/31.png"),
@@ -350,7 +350,7 @@ export const hairTechniques = [
     base: 10,
     naturalColor: [4, 5, 6],
     tonalization:
-      "10/0 10g + 10/69 5g + 30g de emulsão de tonalizante ou oxIdante de 5 volumes",
+      "10/0 10g + 10/69 (WELLA) 5g + 30g de emulsão de tonalizante ou oxIdante de 5 volumes",
     teasedQuadrant: 2,
     technique: "DIAMOND BLOND",
     image: require("@/assets/images/catalogo-de-referencia/33.png"),
@@ -371,7 +371,7 @@ export const hairTechniques = [
     base: 9,
     naturalColor: [4, 5, 6],
     tonalization:
-      "9.1 5g + 9.89 10g + 30g de emulsão de tonalizante ou oxidante de 5 volumes",
+      "9.1 5g + 9.89 (TRUSS) 10g + 30g de emulsão de tonalizante ou oxidante de 5 volumes",
     teasedQuadrant: 2,
     technique: "SUN LIGHT",
     image: require("@/assets/images/catalogo-de-referencia/35.png"),
@@ -392,7 +392,7 @@ export const hairTechniques = [
     base: 9,
     naturalColor: [3, 4, 5],
     tonalization:
-      "9.0 5g + 9.1 10g + 30g de emulsão de tonalizante ou oxidante de 5 volumes",
+      "9.0 5g + 9.1 (TRUSS) 10g + 30g de emulsão de tonalizante ou oxidante de 5 volumes",
     teasedQuadrant: 2,
     technique: "ILUMINUS BLOND",
     image: require("@/assets/images/catalogo-de-referencia/37.png"),
@@ -403,7 +403,7 @@ export const hairTechniques = [
     base: 9,
     naturalColor: [3, 4, 5],
     tonalization:
-      "10/38 15g (wella ilumina) + 30g de emulsão de tonalizante ou oxidante de 5 volumes",
+      "10/38 15g (WELLA) + 30g de emulsão de tonalizante ou oxidante de 5 volumes",
     teasedQuadrant: 2,
     technique: "DIAMOND BLOND",
     image: require("@/assets/images/catalogo-de-referencia/38.png"),
@@ -414,7 +414,7 @@ export const hairTechniques = [
     base: 7,
     naturalColor: [4, 5, 6],
     tonalization:
-      "7/35 10g  + 7/31 5g (wella ilumina) + 30g de emulsão de tonalizante ou oxidante de 5 volumes",
+      "7/35 10g + 7/31 5g (WELLA) + 30g de emulsão de tonalizante ou oxidante de 5 volumes",
     teasedQuadrant: 2,
     technique: "BACK SLICES",
     image: require("@/assets/images/catalogo-de-referencia/39.png"),
@@ -425,7 +425,7 @@ export const hairTechniques = [
     base: 8,
     naturalColor: [4, 5, 6],
     tonalization:
-      "7/35 10g  + 7/31 5g (wella ilumina) + 30g de emulsão de tonalizante ou oxidante de 5 volumes",
+      "7/43 5g + 8/37 10g (WELLA) + 30g de emulsão de tonalizante ou oxidante de 5 volumes",
     teasedQuadrant: 2,
     technique: "BACK SLICES",
     image: require("@/assets/images/catalogo-de-referencia/40.png"),
@@ -436,7 +436,7 @@ export const hairTechniques = [
     base: 8,
     naturalColor: [3, 4, 5],
     tonalization:
-      "9/43 7G 5g + 8/05 7G (wella ilumina) + 15g de emulsão de tonalizante ou oxidante de 5 volumes",
+      "9/43 7G 5g + 8/05 7G (WELLA) + 15g de emulsão de tonalizante ou oxidante de 5 volumes",
     teasedQuadrant: 2,
     technique: "ILUMINUS BLOND",
     image: require("@/assets/images/catalogo-de-referencia/41.png"),
@@ -447,7 +447,7 @@ export const hairTechniques = [
     base: 8,
     naturalColor: [3, 4, 5],
     tonalization:
-      "9/43 10g + 8/37 10g (wella iluminus) + 20g de emulsão de tonalizante ou oxidante de 5 volumes",
+      "9/43 10g + 8/37 10g (WELLA) + 20g de emulsão de tonalizante ou oxidante de 5 volumes",
     teasedQuadrant: 2,
     technique: "ILUMINUS BLOND",
     image: require("@/assets/images/catalogo-de-referencia/42.png"),
@@ -458,7 +458,7 @@ export const hairTechniques = [
     base: 7,
     naturalColor: [3, 4, 5],
     tonalization:
-      "9/43 10g + 7/35 10g (wella ilumina) + 20g de emulsão de tonalizante ou oxidante de 5 volumes",
+      "9/43 10g + 7/35 10g (WELLA) + 20g de emulsão de tonalizante ou oxidante de 5 volumes",
     teasedQuadrant: 2,
     technique: "FREE HANDS",
     image: require("@/assets/images/catalogo-de-referencia/43.png"),
