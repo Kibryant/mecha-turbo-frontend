@@ -75,6 +75,13 @@ export default function Referencia() {
                   - {t(hairTechnique.tonalization)}
                 </Text>
               </View>
+              {hairTechnique.brand && (
+                <View className="mt-1">
+                  <Text className="font-heading3 text-gray-300">
+                    - {t("Referência narca")} {hairTechnique.brand}
+                  </Text>
+                </View>
+              )}
             </View>
 
             <View className="mt-4">
