@@ -78,7 +78,7 @@ export default function Referencia() {
               {hairTechnique.brand && (
                 <View className="mt-1">
                   <Text className="font-heading3 text-gray-300">
-                    - {t("Referência narca")} {hairTechnique.brand}
+                    - {t("Referência marca")} {hairTechnique.brand}
                   </Text>
                 </View>
               )}
