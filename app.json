@@ -2,7 +2,7 @@
   "expo": {
     "name": "DNA da Mecha Turbo",
     "slug": "dna-mecha-turbo",
-    "version": "2.0.2",
+    "version": "2.0.3",
     "orientation": "portrait",
     "icon": "./public/logotipo-mecha-turbo-vertical-icon.png",
     "scheme": "dna-mecha-turbo",

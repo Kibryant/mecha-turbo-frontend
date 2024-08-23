@@ -9,7 +9,7 @@ export const hairTechniques = [
     teasedQuadrant: 2,
     controlledOxVolume: 15,
     technique: "SUN LIGHT",
-    image: require("@/assets/images/catalogo-de-referencia/1.png"),
+    image: require("@/assets/images/catalogo-de-referencia/1.webp"),
     bristled: "Eriçado do segundo quadrante",
   },
   {
@@ -23,7 +23,7 @@ export const hairTechniques = [
     separateContour: true,
     teasedQuadrant: 2,
     technique: "GOLDEN CONTRAST",
-    image: require("@/assets/images/catalogo-de-referencia/2.png"),
+    image: require("@/assets/images/catalogo-de-referencia/2.webp"),
     bristled: "Eriçado do segundo quadrante",
   },
   {
@@ -33,7 +33,7 @@ export const hairTechniques = [
     tonalization: "Sem tonalização",
     teasedQuadrant: 2,
     technique: "DIAMOND BLOND",
-    image: require("@/assets/images/catalogo-de-referencia/3.png"),
+    image: require("@/assets/images/catalogo-de-referencia/3.webp"),
     bristled: "Eriçado do segundo quadrante",
   },
   {
@@ -45,7 +45,7 @@ export const hairTechniques = [
     brand: "TRUSS",
     teasedQuadrant: 2,
     technique: "SUN LIGHT",
-    image: require("@/assets/images/catalogo-de-referencia/4.png"),
+    image: require("@/assets/images/catalogo-de-referencia/4.webp"),
     bristled: "Eriçado do segundo quadrante",
   },
   {
@@ -57,7 +57,7 @@ export const hairTechniques = [
     brand: "TRUSS",
     teasedQuadrant: 2,
     technique: "DIAMOND BLOND",
-    image: require("@/assets/images/catalogo-de-referencia/5.png"),
+    image: require("@/assets/images/catalogo-de-referencia/5.webp"),
     bristled: "Eriçado do segundo quadrante",
   },
   {
@@ -69,7 +69,7 @@ export const hairTechniques = [
     brand: "WELLA",
     teasedQuadrant: 2,
     technique: "DIAMOND BLOND",
-    image: require("@/assets/images/catalogo-de-referencia/6.png"),
+    image: require("@/assets/images/catalogo-de-referencia/6.webp"),
     bristled: "Eriçado do segundo quadrante",
   },
   {
@@ -81,7 +81,7 @@ export const hairTechniques = [
     brand: "TRUSS",
     teasedQuadrant: 3,
     technique: "DIAMOND BLOND",
-    image: require("@/assets/images/catalogo-de-referencia/7.png"),
+    image: require("@/assets/images/catalogo-de-referencia/7.webp"),
     bristled: "Eriçado do terceiro quadrante",
   },
   {
@@ -93,7 +93,7 @@ export const hairTechniques = [
     brand: "TRUSS",
     teasedQuadrant: 2,
     technique: "BACK SLICES",
-    image: require("@/assets/images/catalogo-de-referencia/8.png"),
+    image: require("@/assets/images/catalogo-de-referencia/8.webp"),
     bristled: "Eriçado do segundo quadrante",
   },
   {
@@ -103,7 +103,7 @@ export const hairTechniques = [
     tonalization: "Sem tonalização",
     teasedQuadrant: 2,
     technique: "SUN LIGHT 2.0",
-    image: require("@/assets/images/catalogo-de-referencia/9.png"),
+    image: require("@/assets/images/catalogo-de-referencia/9.webp"),
     bristled: "Eriçado do segundo quadrante",
   },
   {
@@ -115,7 +115,7 @@ export const hairTechniques = [
     brand: "TRUSS",
     teasedQuadrant: 3,
     technique: "DIAMOND BLOND",
-    image: require("@/assets/images/catalogo-de-referencia/10.png"),
+    image: require("@/assets/images/catalogo-de-referencia/10.webp"),
     bristled: "Eriçado do terceiro quadrante",
   },
   {
@@ -125,7 +125,7 @@ export const hairTechniques = [
     tonalization: "Sem tonalização",
     teasedQuadrant: 2,
     technique: "DIAMOND BLOND",
-    image: require("@/assets/images/catalogo-de-referencia/11.png"),
+    image: require("@/assets/images/catalogo-de-referencia/11.webp"),
     bristled: "Eriçado do segundo quadrante",
   },
   {
@@ -137,7 +137,7 @@ export const hairTechniques = [
     brand: "TRUSS",
     teasedQuadrant: 2,
     technique: "FAST CONTRAST",
-    image: require("@/assets/images/catalogo-de-referencia/12.png"),
+    image: require("@/assets/images/catalogo-de-referencia/12.webp"),
     bristled: "Eriçado do segundo quadrante",
   },
   {
@@ -147,7 +147,7 @@ export const hairTechniques = [
     tonalization: "Sem tonalização",
     teasedQuadrant: 1,
     technique: "MAXI CONTOUR",
-    image: require("@/assets/images/catalogo-de-referencia/13.png"),
+    image: require("@/assets/images/catalogo-de-referencia/13.webp"),
     bristled: "Eriçado do primeiro quadrante",
   },
   {
@@ -160,7 +160,7 @@ export const hairTechniques = [
     brand: "WELLA",
     teasedQuadrant: 2,
     technique: "FREE HANDS",
-    image: require("@/assets/images/catalogo-de-referencia/14.png"),
+    image: require("@/assets/images/catalogo-de-referencia/14.webp"),
     bristled: "Eriçado do segundo quadrante",
   },
   {
@@ -170,7 +170,7 @@ export const hairTechniques = [
     tonalization: "Sem tonalização",
     teasedQuadrant: 2,
     technique: "DIAMOND BLOND",
-    image: require("@/assets/images/catalogo-de-referencia/15.png"),
+    image: require("@/assets/images/catalogo-de-referencia/15.webp"),
     bristled: "Eriçado do segundo quadrante",
   },
   {
@@ -182,7 +182,7 @@ export const hairTechniques = [
     teasedQuadrant: 2,
     rootShaded: "4.0 10g + 6.0 10g + 20g emulsão ou oxidante de 5 volumes",
     technique: "GOLDEN CONTRAST",
-    image: require("@/assets/images/catalogo-de-referencia/16.png"),
+    image: require("@/assets/images/catalogo-de-referencia/16.webp"),
     bristled: "Eriçado do segundo quadrante",
   },
   {
@@ -194,7 +194,7 @@ export const hairTechniques = [
     brand: "TRUSS",
     teasedQuadrant: 2,
     technique: "DIAMOND BLOND",
-    image: require("@/assets/images/catalogo-de-referencia/17.png"),
+    image: require("@/assets/images/catalogo-de-referencia/17.webp"),
     bristled: "Eriçado do segundo quadrante",
   },
   {
@@ -206,7 +206,7 @@ export const hairTechniques = [
     brand: "WELLA",
     teasedQuadrant: 2,
     technique: "DIAMOND BLOND",
-    image: require("@/assets/images/catalogo-de-referencia/18.png"),
+    image: require("@/assets/images/catalogo-de-referencia/18.webp"),
     bristled: "Eriçado do segundo quadrante",
   },
   {
@@ -217,7 +217,7 @@ export const hairTechniques = [
     tonalization: "Sem tonalização",
     teasedQuadrant: 2,
     technique: "DIAMOND BLOND",
-    image: require("@/assets/images/catalogo-de-referencia/19.png"),
+    image: require("@/assets/images/catalogo-de-referencia/19.webp"),
     bristled: "Eriçado do segundo quadrante",
   },
   {
@@ -229,7 +229,7 @@ export const hairTechniques = [
     brand: "WELLA",
     teasedQuadrant: 2,
     technique: "SUN LIGHT",
-    image: require("@/assets/images/catalogo-de-referencia/20.png"),
+    image: require("@/assets/images/catalogo-de-referencia/20.webp"),
     bristled: "Eriçado do segundo quadrante",
   },
   {
@@ -239,7 +239,7 @@ export const hairTechniques = [
     tonalization: "Sem tonalização",
     teasedQuadrant: 2,
     technique: "ILUMINUS BLOND",
-    image: require("@/assets/images/catalogo-de-referencia/21.png"),
+    image: require("@/assets/images/catalogo-de-referencia/21.webp"),
     bristled: "Eriçado do segundo quadrante",
   },
   {
@@ -251,7 +251,7 @@ export const hairTechniques = [
     brand: "WELLA",
     teasedQuadrant: 2,
     technique: "DIAMOND BLOND",
-    image: require("@/assets/images/catalogo-de-referencia/22.png"),
+    image: require("@/assets/images/catalogo-de-referencia/22.webp"),
     bristled: "Eriçado do segundo quadrante",
   },
   {
@@ -263,7 +263,7 @@ export const hairTechniques = [
     brand: "WELLA",
     teasedQuadrant: 2,
     technique: "SUN LIGHT 2.0",
-    image: require("@/assets/images/catalogo-de-referencia/23.png"),
+    image: require("@/assets/images/catalogo-de-referencia/23.webp"),
     bristled: "Eriçado do segundo quadrante",
   },
   {
@@ -273,7 +273,7 @@ export const hairTechniques = [
     tonalization: "Sem tonalização",
     teasedQuadrant: 2,
     technique: "BLOND CONTRAST",
-    image: require("@/assets/images/catalogo-de-referencia/24.png"),
+    image: require("@/assets/images/catalogo-de-referencia/24.webp"),
     bristled: "Eriçado do segundo quadrante",
   },
   {
@@ -285,7 +285,7 @@ export const hairTechniques = [
     brand: "WELLA",
     teasedQuadrant: 2,
     technique: "FAST CONTRAST",
-    image: require("@/assets/images/catalogo-de-referencia/25.png"),
+    image: require("@/assets/images/catalogo-de-referencia/25.webp"),
     bristled: "Eriçado do segundo quadrante",
   },
   {
@@ -297,7 +297,7 @@ export const hairTechniques = [
     brand: "WELLA",
     teasedQuadrant: 2,
     technique: "MAXI CONTOUR",
-    image: require("@/assets/images/catalogo-de-referencia/26.png"),
+    image: require("@/assets/images/catalogo-de-referencia/26.webp"),
     bristled: "Eriçado do primeiro quadrante",
   },
   {
@@ -307,7 +307,7 @@ export const hairTechniques = [
     tonalization: "Sem tonalização",
     teasedQuadrant: 2,
     technique: "DIAMOND BLOND",
-    image: require("@/assets/images/catalogo-de-referencia/27.png"),
+    image: require("@/assets/images/catalogo-de-referencia/27.webp"),
     bristled: "Eriçado do segundo quadrante",
   },
   {
@@ -319,7 +319,7 @@ export const hairTechniques = [
     brand: "WELLA",
     teasedQuadrant: 2,
     technique: "DIAMOND BLOND",
-    image: require("@/assets/images/catalogo-de-referencia/28.png"),
+    image: require("@/assets/images/catalogo-de-referencia/28.webp"),
     bristled: "Eriçado do terceiro quadrante",
   },
   {
@@ -331,7 +331,7 @@ export const hairTechniques = [
     brand: "WELLA",
     teasedQuadrant: 2,
     technique: "FREE HANDS",
-    image: require("@/assets/images/catalogo-de-referencia/29.png"),
+    image: require("@/assets/images/catalogo-de-referencia/29.webp"),
     bristled: "Eriçado do segundo quadrante",
   },
   {
@@ -341,7 +341,7 @@ export const hairTechniques = [
     tonalization: "Sem tonalização",
     teasedQuadrant: 2,
     technique: "BLOND CONTRAST",
-    image: require("@/assets/images/catalogo-de-referencia/30.png"),
+    image: require("@/assets/images/catalogo-de-referencia/30.webp"),
     bristled: "Eriçado do segundo quadrante",
   },
   {
@@ -353,7 +353,7 @@ export const hairTechniques = [
     brand: "WELLA",
     teasedQuadrant: 2,
     technique: "DIAMOND BLOND",
-    image: require("@/assets/images/catalogo-de-referencia/31.png"),
+    image: require("@/assets/images/catalogo-de-referencia/31.webp"),
     bristled: "Eriçado do segundo quadrante",
   },
   {
@@ -363,7 +363,7 @@ export const hairTechniques = [
     tonalization: "Sem tonalização",
     teasedQuadrant: 2,
     technique: "BLOND CONTRAST",
-    image: require("@/assets/images/catalogo-de-referencia/32.png"),
+    image: require("@/assets/images/catalogo-de-referencia/32.webp"),
     bristled: "Eriçado do segundo quadrante",
   },
   {
@@ -375,7 +375,7 @@ export const hairTechniques = [
     brand: "WELLA",
     teasedQuadrant: 2,
     technique: "DIAMOND BLOND",
-    image: require("@/assets/images/catalogo-de-referencia/33.png"),
+    image: require("@/assets/images/catalogo-de-referencia/33.webp"),
     bristled: "Eriçado do segundo quadrante",
   },
   {
@@ -385,7 +385,7 @@ export const hairTechniques = [
     tonalization: "Sem tonalização",
     teasedQuadrant: 2,
     technique: "DIAMOND BLOND",
-    image: require("@/assets/images/catalogo-de-referencia/34.png"),
+    image: require("@/assets/images/catalogo-de-referencia/34.webp"),
     bristled: "Eriçado do primeiro quadrante",
   },
   {
@@ -397,7 +397,7 @@ export const hairTechniques = [
     brand: "TRUSS",
     teasedQuadrant: 2,
     technique: "SUN LIGHT",
-    image: require("@/assets/images/catalogo-de-referencia/35.png"),
+    image: require("@/assets/images/catalogo-de-referencia/35.webp"),
     bristled: "Eriçado do segundo quadrante",
   },
   {
@@ -407,7 +407,7 @@ export const hairTechniques = [
     tonalization: "Sem tonalização",
     teasedQuadrant: 2,
     technique: "DIAMOND BLOND",
-    image: require("@/assets/images/catalogo-de-referencia/36.png"),
+    image: require("@/assets/images/catalogo-de-referencia/36.webp"),
     bristled: "Eriçado do segundo quadrante",
   },
   {
@@ -419,7 +419,7 @@ export const hairTechniques = [
     brand: "TRUSS",
     teasedQuadrant: 2,
     technique: "SUN LIGHT 2.0",
-    image: require("@/assets/images/catalogo-de-referencia/37.png"),
+    image: require("@/assets/images/catalogo-de-referencia/37.webp"),
     bristled: "Eriçado do segundo quadrante",
   },
   {
@@ -431,7 +431,7 @@ export const hairTechniques = [
     brand: "WELLA",
     teasedQuadrant: 2,
     technique: "DIAMOND BLOND",
-    image: require("@/assets/images/catalogo-de-referencia/38.png"),
+    image: require("@/assets/images/catalogo-de-referencia/38.webp"),
     bristled: "Eriçado do segundo quadrante",
   },
   {
@@ -443,7 +443,7 @@ export const hairTechniques = [
     brand: "WELLA",
     teasedQuadrant: 2,
     technique: "BACK SLICES",
-    image: require("@/assets/images/catalogo-de-referencia/39.png"),
+    image: require("@/assets/images/catalogo-de-referencia/39.webp"),
     bristled: "Eriçado do segundo quadrante",
   },
   {
@@ -455,7 +455,7 @@ export const hairTechniques = [
     brand: "WELLA",
     teasedQuadrant: 2,
     technique: "BACK SLICES",
-    image: require("@/assets/images/catalogo-de-referencia/40.png"),
+    image: require("@/assets/images/catalogo-de-referencia/40.webp"),
     bristled: "Eriçado do segundo quadrante",
   },
   {
@@ -467,7 +467,7 @@ export const hairTechniques = [
     brand: "WELLA",
     teasedQuadrant: 2,
     technique: "ILUMINUS BLOND",
-    image: require("@/assets/images/catalogo-de-referencia/41.png"),
+    image: require("@/assets/images/catalogo-de-referencia/41.webp"),
     bristled: "Eriçado do segundo quadrante",
   },
   {
@@ -479,7 +479,7 @@ export const hairTechniques = [
     brand: "WELLA",
     teasedQuadrant: 2,
     technique: "ILUMINUS BLOND",
-    image: require("@/assets/images/catalogo-de-referencia/42.png"),
+    image: require("@/assets/images/catalogo-de-referencia/42.webp"),
     bristled: "Eriçado do segundo quadrante",
   },
   {
@@ -491,7 +491,7 @@ export const hairTechniques = [
     brand: "WELLA",
     teasedQuadrant: 2,
     technique: "FREE HANDS",
-    image: require("@/assets/images/catalogo-de-referencia/43.png"),
+    image: require("@/assets/images/catalogo-de-referencia/43.webp"),
     bristled: "Eriçado do segundo quadrante",
   },
   {
@@ -503,7 +503,7 @@ export const hairTechniques = [
     brand: "WELLA",
     teasedQuadrant: 2,
     technique: "SUN LIGHT",
-    image: require("@/assets/images/catalogo-de-referencia/44.png"),
+    image: require("@/assets/images/catalogo-de-referencia/44.webp"),
     bristled: "Eriçado do segundo quadrante",
   },
   {
@@ -513,7 +513,7 @@ export const hairTechniques = [
     tonalization: "Sem tonalização",
     teasedQuadrant: 3,
     technique: "FREE HANDS",
-    image: require("@/assets/images/catalogo-de-referencia/45.png"),
+    image: require("@/assets/images/catalogo-de-referencia/45.webp"),
     bristled: "Eriçado do terceiro quadrante",
   },
   {
@@ -525,7 +525,7 @@ export const hairTechniques = [
     brand: "WELLA",
     teasedQuadrant: 2,
     technique: "FAST CONTRAST",
-    image: require("@/assets/images/catalogo-de-referencia/46.png"),
+    image: require("@/assets/images/catalogo-de-referencia/46.webp"),
     bristled: "Eriçado do segundo quadrante",
   },
   {
@@ -537,7 +537,7 @@ export const hairTechniques = [
     brand: "WELLA",
     teasedQuadrant: 2,
     technique: "DIAMOND BLOND",
-    image: require("@/assets/images/catalogo-de-referencia/47.png"),
+    image: require("@/assets/images/catalogo-de-referencia/47.webp"),
     bristled: "Eriçado do segundo quadrante",
   },
   {
@@ -549,7 +549,7 @@ export const hairTechniques = [
     brand: "WELLA",
     teasedQuadrant: 2,
     technique: "DIAMOND BLOND",
-    image: require("@/assets/images/catalogo-de-referencia/48.png"),
+    image: require("@/assets/images/catalogo-de-referencia/48.webp"),
     bristled: "Eriçado do segundo quadrante",
   },
   {
@@ -561,7 +561,7 @@ export const hairTechniques = [
     brand: "WELLA",
     teasedQuadrant: 2,
     technique: "BACK SLICES",
-    image: require("@/assets/images/catalogo-de-referencia/49.png"),
+    image: require("@/assets/images/catalogo-de-referencia/49.webp"),
     bristled: "Eriçado do segundo quadrante",
   },
 ];
