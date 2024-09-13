@@ -48,7 +48,7 @@ export default function DateRangeFilter({
     <View className="w-full">
       <View className="w-full flex flex-col mb-3">
         <TouchableHighlight
-          onPress={() => setShowStartDatePicker(true)}
+          onPress={() => setShowStartDatePicker((prev) => !prev)}
           className="w-full rounded-md p-3 border border-primary"
         >
           <Text className="text-center text-white font-headingBold">
@@ -73,7 +73,7 @@ export default function DateRangeFilter({
 
       <View className="w-full flex flex-col mb-3">
         <TouchableHighlight
-          onPress={() => setShowEndDatePicker(true)}
+          onPress={() => setShowEndDatePicker((prev) => !prev)}
           className="w-full rounded-md p-3 border border-primary"
         >
           <Text className="text-center text-white font-headingBold">

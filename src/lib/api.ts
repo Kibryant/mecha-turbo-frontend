@@ -1,7 +1,7 @@
 import Axios from "axios";
 
 export const api = Axios.create({
-  baseURL: process.env.EXPO_PUBLIC_BACKEND_URL ?? "http://10.0.2.2:3333",
+  baseURL: "https://3c67-45-165-125-84.ngrok-free.app",
   headers: {
     "Content-Type": "application/json",
   },

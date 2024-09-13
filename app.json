@@ -2,7 +2,7 @@
   "expo": {
     "name": "DNA da Mecha Turbo",
     "slug": "dna-mecha-turbo",
-    "version": "2.0.3",
+    "version": "2.0.5",
     "orientation": "portrait",
     "icon": "./public/logotipo-mecha-turbo-vertical-icon.png",
     "scheme": "dna-mecha-turbo",
@@ -21,7 +21,7 @@
         "foregroundImage": "./public/logotipo-mecha-turbo-vertical-adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.app.br.dnamechaturbo"
+      "package": "com.app.dnamechaturbo"
     },
     "web": {
       "bundler": "metro",
