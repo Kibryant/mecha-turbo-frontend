@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useMemo } from "react";
 import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
 import isBetween from "dayjs/plugin/isBetween";
@@ -8,12 +8,12 @@ dayjs.extend(customParseFormat);
 dayjs.extend(isBetween);
 
 export function useUserFilter(users: User[]) {
-  const [searchEmail, setSearchEmail] = useState<string>("");
+  const [searchEmail, setSearchEmail] = useState("");
   const [startDate, setStartDate] = useState<Date | undefined>(undefined);
   const [endDate, setEndDate] = useState<Date | undefined>(undefined);
   const [filteredUsers, setFilteredUsers] = useState<User[]>(users);
 
-  useEffect(() => {
+  const handleFilter = useMemo(() => {
     let filtered = users.filter((user) =>
       user.email.toLowerCase().includes(searchEmail.toLowerCase()),
     );
@@ -38,7 +38,7 @@ export function useUserFilter(users: User[]) {
     }
 
     setFilteredUsers(filtered);
-  }, [searchEmail, users, startDate, endDate]);
+  }, [searchEmail, startDate, endDate, users]);
 
   return {
     searchEmail,
@@ -48,5 +48,6 @@ export function useUserFilter(users: User[]) {
     endDate,
     setEndDate,
     filteredUsers,
+    handleFilter,
   };
 }

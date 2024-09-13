@@ -69,6 +69,12 @@ export default function Layout() {
             drawerLabel: "Usuários cadastrados",
           }}
         />
+        <Drawer.Screen
+          name="adicionar-usuario"
+          options={{
+            drawerLabel: "Adicionar usuário",
+          }}
+        />
       </Drawer>
     </GestureHandlerRootView>
   );

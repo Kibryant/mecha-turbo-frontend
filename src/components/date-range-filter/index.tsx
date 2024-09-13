@@ -96,7 +96,7 @@ export default function DateRangeFilter({
       </View>
       <TouchableHighlight
         onPress={clearDates}
-        className="w-full rounded-md p-3 bg-primary"
+        className="w-full rounded-md py-2 px-1 bg-primary"
       >
         <Text className="text-center text-white font-headingBold">
           Limpar Datas

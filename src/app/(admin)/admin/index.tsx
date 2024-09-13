@@ -49,6 +49,18 @@ export default function Admin() {
           </Link>
 
           <Link
+            href="/admin/adicionar-usuario"
+            className="p-4 w-full bg-primary rounded-md mt-2"
+            asChild
+          >
+            <Pressable>
+              <Text className="text-gray-100 font-headingBold text-center">
+                Adicionar novo usuário
+              </Text>
+            </Pressable>
+          </Link>
+
+          <Link
             href="/admin/configuracoes"
             className="p-4 w-full bg-primary rounded-md mt-2"
             asChild

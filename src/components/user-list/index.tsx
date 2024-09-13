@@ -1,11 +1,10 @@
 /* eslint-disable prettier/prettier */
 import React from "react";
-import { View, Text, Pressable, ActivityIndicator } from "react-native";
+import { View, Text, Pressable, ActivityIndicator, TextInput } from "react-native";
 import { FlashList } from "@shopify/flash-list";
 import { User } from "@/core/user";
 import { isSubscriptionActive } from "@/utils/isSubscriptionActive";
 import DateRangeFilter from "../date-range-filter";
-import UserFilter from "../user-filter";
 import { useUserFilter } from "@/hooks/useFilterUsers";
 
 interface Props {
@@ -25,7 +24,7 @@ export default function UserList({ users, deleteUser, editUser, fetchUsers, isLo
     setStartDate,
     endDate,
     setEndDate,
-    filteredUsers
+    filteredUsers,
   } = useUserFilter(users);
 
   if (users.length === 0) {
@@ -41,24 +40,36 @@ export default function UserList({ users, deleteUser, editUser, fetchUsers, isLo
 
   return (
     <>
+      <View className="flex-col items-center gap-y-2 my-10">
+        <Text className="text-xl font-headingBold text-gray-100 mb-4">
+          Usuários Cadastrados
+        </Text>
+
+        <View className="w-full mb-3">
+          <TextInput
+            className="w-full p-2 border border-gray-300 rounded-md mb-2 z-50"
+            placeholder="Buscar por email"
+            placeholderTextColor="#374151"
+            style={{ color: "#f3f4f6", fontSize: 12 }}
+            value={searchEmail}
+            onChangeText={setSearchEmail}
+          />
+        </View>
+
+        <DateRangeFilter
+          startDate={startDate}
+          setStartDate={setStartDate}
+          endDate={endDate}
+          setEndDate={setEndDate}
+        />
+      </View>
+
       <FlashList
         data={filteredUsers}
         ListHeaderComponent={() => (
-          <View className="flex-col items-center gap-y-2 mt-10">
-            <Text className="text-xl font-headingBold text-gray-100 mb-4">
-              Usuários Cadastrados
-            </Text>
-            <UserFilter searchEmail={searchEmail} setSearchEmail={setSearchEmail} />
-            <DateRangeFilter
-              startDate={startDate}
-              setStartDate={setStartDate}
-              endDate={endDate}
-              setEndDate={setEndDate}
-            />
-            <Text className="text-sm font-headingBold text-gray-100 text-center my-4">
-              Total de usuários: {filteredUsers.length}
-            </Text>
-          </View>
+          <Text className="text-sm font-headingBold text-gray-100 text-center my-4">
+            Total de usuários: {filteredUsers.length}
+          </Text>
         )}
         contentContainerStyle={{ paddingBottom: 20 }}
         estimatedItemSize={2000}
