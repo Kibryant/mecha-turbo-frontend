@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 import { View, Text, ActivityIndicator, TextInput } from "react-native";
-import { FlashList } from "@shopify/flash-list";
+import { FlashList, ListRenderItemInfo } from "@shopify/flash-list";
 import { User } from "@/core/user";
 import DateRangeFilter from "../date-range-filter";
 import { useUserFilter } from "@/hooks/useFilterUsers";
@@ -30,6 +30,20 @@ export default function UserList({
     filteredUsers,
   } = useUserFilter(users);
 
+  const renderItem = ({ item: user }: ListRenderItemInfo<User>) => (
+    <RenderUser editUser={editUser} user={user} deleteUser={deleteUser} />
+  );
+
+  const renderListHeaderComponent = () => (
+    <Text className="text-sm font-headingBold text-gray-100 text-center my-4">
+      Total de usuários: {filteredUsers.length}
+    </Text>
+  );
+
+  const renderListFooterComponent = () => (
+    <UserListFooter isLoading={isLoading} />
+  );
+
   return (
     <Suspense fallback={<ActivityIndicator size="large" color="#fe017f" />}>
       <View className="flex-col items-center gap-y-2 my-10">
@@ -56,20 +70,14 @@ export default function UserList({
 
       <FlashList
         data={filteredUsers}
-        ListHeaderComponent={() => (
-          <Text className="text-sm font-headingBold text-gray-100 text-center my-4">
-            Total de usuários: {filteredUsers.length}
-          </Text>
-        )}
+        ListHeaderComponent={renderListHeaderComponent}
         contentContainerStyle={{ paddingBottom: 20 }}
         estimatedItemSize={2000}
         keyExtractor={(item) => item._id}
-        renderItem={({ item }) => (
-          <RenderUser editUser={editUser} user={item} deleteUser={deleteUser} />
-        )}
+        renderItem={renderItem}
         onEndReached={fetchUsers}
         onEndReachedThreshold={0.05}
-        ListFooterComponent={() => <UserListFooter isLoading={isLoading} />}
+        ListFooterComponent={renderListFooterComponent}
       />
     </Suspense>
   );
