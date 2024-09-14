@@ -7,11 +7,20 @@ export function useUserFilter(users: User[]) {
   const [filteredUsers, setFilteredUsers] = useState<User[]>(users);
 
   const handleFilter = useCallback(() => {
-    let filtered = users.filter((user) =>
-      user.email.toLowerCase().includes(searchEmail.toLowerCase()),
-    );
+    let filtered = users;
 
-    if (purchaseDate) {
+    if (searchEmail.length === 0 && !purchaseDate) {
+      setFilteredUsers(users);
+      return;
+    }
+
+    if (searchEmail.length > 0 && !purchaseDate) {
+      filtered = users.filter((user) =>
+        user.email.toLowerCase().includes(searchEmail.toLowerCase()),
+      );
+    }
+
+    if (purchaseDate && searchEmail.length === 0) {
       const actualDate = new Date(purchaseDate);
 
       filtered = filtered.filter((user) => {

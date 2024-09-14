@@ -5,6 +5,7 @@ import { User } from "@/core/user";
 import DateRangeFilter from "../date-range-filter";
 import { useUserFilter } from "@/hooks/useFilterUsers";
 import { RenderUser } from "./render-user";
+import { UserListFooter } from "./user-list-footer";
 
 interface Props {
   users: User[];
@@ -68,15 +69,7 @@ export default function UserList({
         )}
         onEndReached={fetchUsers}
         onEndReachedThreshold={0.05}
-        ListFooterComponent={() => {
-          if (!isLoading) return null;
-
-          return (
-            <View className="p-4">
-              <ActivityIndicator size="large" color="#fe017f" />
-            </View>
-          );
-        }}
+        ListFooterComponent={() => <UserListFooter isLoading={isLoading} />}
       />
     </Suspense>
   );
