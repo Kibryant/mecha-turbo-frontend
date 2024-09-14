@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { api } from "@/lib/api";
 import { User } from "@/core/user";
+import { Alert } from "react-native";
 
 export interface UserResponse {
   currentPage: number;
@@ -36,8 +37,8 @@ export function useFetchUsers(token: string) {
           setPage((prev) => prev + 1);
         }
       }
-    } catch (error) {
-      console.error("Failed to fetch users", error);
+    } catch (_) {
+      Alert.alert("Error", "Error ao buscar usuários");
     } finally {
       setIsLoading(false);
     }

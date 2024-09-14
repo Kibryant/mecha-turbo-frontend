@@ -3,103 +3,62 @@ import { View, Text, TouchableHighlight } from "react-native";
 import DateTimePicker, {
   DateTimePickerEvent,
 } from "@react-native-community/datetimepicker";
-import dayjs from "dayjs";
 
 interface Props {
-  startDate: Date | undefined;
-  setStartDate: (date: Date | undefined) => void;
-  endDate: Date | undefined;
-  setEndDate: (date: Date | undefined) => void;
+  purchaseDate: Date | undefined;
+  setPurchaseDate: (date: Date | undefined) => void;
 }
 
 export default function DateRangeFilter({
-  startDate,
-  setStartDate,
-  endDate,
-  setEndDate,
+  purchaseDate,
+  setPurchaseDate,
 }: Props) {
-  const [showStartDatePicker, setShowStartDatePicker] = React.useState(false);
-  const [showEndDatePicker, setShowEndDatePicker] = React.useState(false);
+  const [showPuchaseDatePicker, setShowPuchaseDatePicker] =
+    React.useState(false);
 
-  const onChangeStartDate = (
+  const onChangePurchaseDate = (
     event: DateTimePickerEvent,
     selectedDate?: Date,
   ) => {
-    setShowStartDatePicker(false);
-    if (selectedDate) {
-      setStartDate(selectedDate);
-      const newEndDate = dayjs(selectedDate).add(1, "year").toDate();
-      setEndDate(newEndDate);
-    }
+    const currentDate = selectedDate || purchaseDate;
+    setShowPuchaseDatePicker(false);
+    setPurchaseDate(currentDate);
   };
 
-  const onChangeEndDate = (event: DateTimePickerEvent, selectedDate?: Date) => {
-    setShowEndDatePicker(false);
-    if (selectedDate) {
-      setEndDate(selectedDate);
-    }
-  };
   const clearDates = () => {
-    setStartDate(undefined);
-    setEndDate(undefined);
+    setPurchaseDate(undefined);
   };
 
   return (
     <View className="w-full">
       <View className="w-full flex flex-col mb-3">
         <TouchableHighlight
-          onPress={() => setShowStartDatePicker((prev) => !prev)}
+          onPress={() => setShowPuchaseDatePicker((prev) => !prev)}
           className="w-full rounded-md p-3 border border-primary"
         >
           <Text className="text-center text-white font-headingBold">
-            Selecione a data inicial
+            Buscar por data de compra:{" "}
+            {purchaseDate
+              ? purchaseDate.toLocaleDateString("pt-br")
+              : "Não selecionada"}
           </Text>
         </TouchableHighlight>
-        {showStartDatePicker && (
+        {showPuchaseDatePicker && (
           <DateTimePicker
-            value={startDate || new Date()}
+            value={purchaseDate || new Date()}
             mode="date"
             display="inline"
-            onChange={onChangeStartDate}
+            onChange={onChangePurchaseDate}
           />
         )}
-        <Text className="text-xs font-headingBold text-gray-300">
-          Data Inicial:{" "}
-          {startDate
-            ? startDate.toLocaleDateString("pt-br")
-            : "Não selecionada"}
-        </Text>
       </View>
 
-      <View className="w-full flex flex-col mb-3">
-        <TouchableHighlight
-          onPress={() => setShowEndDatePicker((prev) => !prev)}
-          className="w-full rounded-md p-3 border border-primary"
-        >
-          <Text className="text-center text-white font-headingBold">
-            Selecione a data final
-          </Text>
-        </TouchableHighlight>
-
-        {showEndDatePicker && (
-          <DateTimePicker
-            value={endDate || new Date()}
-            mode="date"
-            display="inline"
-            onChange={onChangeEndDate}
-          />
-        )}
-        <Text className="text-xs font-headingBold text-gray-300">
-          Data Final:{" "}
-          {endDate ? endDate.toLocaleDateString("pt-br") : "Não selecionada"}
-        </Text>
-      </View>
       <TouchableHighlight
         onPress={clearDates}
         className="w-full rounded-md py-2 px-1 bg-primary"
       >
         <Text className="text-center text-white font-headingBold">
-          Limpar Datas
+          Limpar Data
         </Text>
       </TouchableHighlight>
     </View>

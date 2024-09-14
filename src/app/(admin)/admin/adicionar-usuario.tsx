@@ -8,6 +8,7 @@ export default function AdicionarUsuario() {
   const { token } = useAuthAdmin();
   const { fetchUsers } = useFetchUsers(token as string);
   const { addUser } = useUserActions(token as string, fetchUsers);
+
   return (
     <View className="flex-1 bg-secondary px-4">
       <Text className="text-2xl font-headingBold text-gray-100 text-center my-4">

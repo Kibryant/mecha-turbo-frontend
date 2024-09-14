@@ -114,7 +114,7 @@ export default function EditUser({
             </Pressable>
             <Pressable
               onPress={closeModal}
-              className="bg-red-600 rounded-md p-2 mt-4"
+              className="rounded-md p-2 mt-4 border border-primary"
             >
               <Text className="text-gray-100 font-body">Cancelar</Text>
             </Pressable>

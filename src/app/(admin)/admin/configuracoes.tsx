@@ -58,7 +58,9 @@ export default function Configuracoes() {
             <Text className="text-lg font-headingBold text-gray-100">
               Antigo Email
             </Text>
-            <Text className="text-sm font-headingBold text-red-500">*Obrigatório</Text>
+            <Text className="text-sm font-headingBold text-red-500">
+              *Obrigatório
+            </Text>
           </View>
 
           <TextInput
@@ -72,7 +74,9 @@ export default function Configuracoes() {
         </View>
 
         <View className="w-full ">
-          <Text className="text-lg font-headingBold text-gray-100">Novo Email</Text>
+          <Text className="text-lg font-headingBold text-gray-100">
+            Novo Email
+          </Text>
           <TextInput
             className="w-full p-2 mb-4 border border-gray-300 rounded-md text-gray-100"
             placeholder="Novo Email"
@@ -86,7 +90,9 @@ export default function Configuracoes() {
         </View>
 
         <View className="w-full ">
-          <Text className="text-lg font-headingBold text-gray-100">Nova Senha</Text>
+          <Text className="text-lg font-headingBold text-gray-100">
+            Nova Senha
+          </Text>
           <TextInput
             className="w-full p-2 mb-4 border border-gray-300 rounded-md text-gray-100"
             placeholder="Senha"
@@ -117,7 +123,9 @@ export default function Configuracoes() {
           className="w-full bg-emerald-500 rounded-md py-2"
           onPress={updateAdmin}
         >
-          <Text className="text-center text-white font-headingBold">Atualizar</Text>
+          <Text className="text-center text-white font-headingBold">
+            Atualizar
+          </Text>
         </Pressable>
       </View>
     </View>
