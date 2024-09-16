@@ -1,6 +1,7 @@
 import React from "react";
-import { View, Image, Animated } from "react-native";
+import { View, Animated } from "react-native";
 import { logoVertical } from "@/constants/logo";
+import { Image } from "expo-image";
 
 interface HeaderProps {
   fadeAnim: Animated.Value;
@@ -10,7 +11,11 @@ export default function Header({ fadeAnim }: HeaderProps) {
   return (
     <View className="items-center justify-center p-4">
       <Animated.View style={{ opacity: fadeAnim }}>
-        <Image source={logoVertical} style={{ width: 280, height: 280 }} />
+        <Image
+          source={logoVertical}
+          style={{ width: 280, height: 280 }}
+          contentFit="contain"
+        />
       </Animated.View>
     </View>
   );

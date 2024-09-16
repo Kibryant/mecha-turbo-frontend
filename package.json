@@ -1,6 +1,7 @@
 {
   "name": "frontend",
   "main": "expo-router/entry",
+  "author": "Arthur Gustavo",
   "version": "1.0.0",
   "scripts": {
     "start": "expo start",
@@ -10,9 +11,6 @@
     "test": "jest --watchAll",
     "lint": "expo lint",
     "build": "expo-module build"
-  },
-  "jest": {
-    "preset": "jest-expo"
   },
   "dependencies": {
     "@expo-google-fonts/inter": "^0.2.3",

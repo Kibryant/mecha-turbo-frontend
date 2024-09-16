@@ -89,6 +89,8 @@ export default function Admin() {
           width: 100,
           height: 100,
         }}
+        priority="high"
+        contentFit="contain"
       />
     </View>
   );

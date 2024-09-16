@@ -76,6 +76,7 @@ export default function Home() {
           height: 100,
         }}
         priority="high"
+        contentFit="contain"
       />
     </View>
   );

@@ -40,7 +40,7 @@ export default function SignIn() {
 
   const { t } = useTranslation();
 
-  const handleLogin: SubmitHandler<SignInSchema> = async ({
+  const handleSignIN: SubmitHandler<SignInSchema> = async ({
     email,
     password,
   }) => {
@@ -181,7 +181,7 @@ export default function SignIn() {
 
             <TouchableOpacity
               className="w-full px-2 py-3 bg-primary rounded-md mt-2"
-              onPress={handleSubmit(handleLogin)}
+              onPress={handleSubmit(handleSignIN)}
               disabled={isSubmitting}
             >
               {isSubmitting ? (

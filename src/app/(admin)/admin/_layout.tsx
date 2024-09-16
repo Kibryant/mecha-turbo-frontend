@@ -58,12 +58,6 @@ export default function Layout() {
           }}
         />
         <Drawer.Screen
-          name="configuracoes"
-          options={{
-            drawerLabel: "Configurações",
-          }}
-        />
-        <Drawer.Screen
           name="usuarios"
           options={{
             drawerLabel: "Usuários cadastrados",
@@ -73,6 +67,12 @@ export default function Layout() {
           name="adicionar-usuario"
           options={{
             drawerLabel: "Adicionar usuário",
+          }}
+        />
+        <Drawer.Screen
+          name="configuracoes"
+          options={{
+            drawerLabel: "Configurações",
           }}
         />
       </Drawer>
