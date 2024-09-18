@@ -1,6 +1,6 @@
 import Back from "@/components/back";
 import { useLocalSearchParams } from "expo-router";
-import { View, Text } from "react-native";
+import { View, Text, SafeAreaView } from "react-native";
 import { Image } from "expo-image";
 import { colorCreation } from "@/constants/colorCreation";
 import { useTranslation } from "react-i18next";
@@ -13,7 +13,7 @@ export default function CriacaoDeCor() {
   const color = colorCreation[parseInt(index as string)];
 
   return (
-    <View className="flex-1 flex-col items-center bg-secondary">
+    <SafeAreaView className="flex-1 flex-col items-center bg-secondary">
       <View className="w-full mt-4">
         <Back to="/criacao-de-cores" />
       </View>
@@ -64,6 +64,6 @@ export default function CriacaoDeCor() {
           </View>
         </View>
       </View>
-    </View>
+    </SafeAreaView>
   );
 }

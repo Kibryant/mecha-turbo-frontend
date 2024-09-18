@@ -23,7 +23,7 @@ export default function Home() {
   return (
     <View className="flex-1 flex-col items-center justify-between bg-secondary">
       <View className="flex-col items-center gap-y-1 mt-4">
-        <Text className="text-2xl font-heading1 text-gray-100">
+        <Text className="text-2xl font-heading1 text-gray-100 text-center">
           {t("Olá")}, {name}!
         </Text>
         <Text className="text-lg text-gray-300 font-body">
