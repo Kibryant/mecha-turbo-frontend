@@ -21,7 +21,7 @@
         "foregroundImage": "./public/logotipo-mecha-turbo-vertical-adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.app.dnamechaturbo"
+      "package": "com.app.dnamechaturbo.br"
     },
     "web": {
       "bundler": "metro",
