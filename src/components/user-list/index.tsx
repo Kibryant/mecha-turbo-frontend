@@ -44,6 +44,10 @@ export default function UserList({
     <UserListFooter isLoading={isLoading} />
   );
 
+  const onEndReached = () => {
+    fetchUsers();
+  };
+
   return (
     <Suspense fallback={<ActivityIndicator size="large" color="#fe017f" />}>
       <View className="flex-col items-center gap-y-2 my-10">
@@ -75,7 +79,7 @@ export default function UserList({
         estimatedItemSize={2000}
         keyExtractor={(item) => item._id}
         renderItem={renderItem}
-        onEndReached={fetchUsers}
+        onEndReached={onEndReached}
         onEndReachedThreshold={0.05}
         ListFooterComponent={renderListFooterComponent}
       />

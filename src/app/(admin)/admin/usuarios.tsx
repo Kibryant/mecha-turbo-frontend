@@ -1,5 +1,5 @@
 import React from "react";
-import { View } from "react-native";
+import { ActivityIndicator, View, Text } from "react-native";
 import { useAuthAdmin } from "@/context/adminAuthContext";
 import UserList from "@/components/user-list";
 import EditUser from "@/components/edit-user";
@@ -9,10 +9,30 @@ import { useUserActions } from "@/hooks/useActionUser";
 export default function Usuarios() {
   const { token } = useAuthAdmin();
 
-  const { users, fetchUsers, isLoading } = useFetchUsers(token as string);
+  const { users, fetchUsers, isLoading, isFetchingNextPage } = useFetchUsers(
+    token as string,
+  );
 
   const { deleteUser, editUser, editingUser, showModal, closeModal } =
-    useUserActions(token as string, fetchUsers);
+    useUserActions(token as string);
+
+  if (isLoading) {
+    return (
+      <View className="flex-1 bg-secondary px-4 justify-center items-center">
+        <ActivityIndicator size="large" color="#fe017f" />
+      </View>
+    );
+  }
+
+  if (!users) {
+    return (
+      <View className="flex-1 bg-secondary px-4 justify-center items-center">
+        <Text className="text-xl font-headingBold text-gray-100">
+          Nenhum usuário encontrado
+        </Text>
+      </View>
+    );
+  }
 
   return (
     <View className="flex-1 bg-secondary px-4">
@@ -21,7 +41,7 @@ export default function Usuarios() {
         fetchUsers={fetchUsers}
         deleteUser={deleteUser}
         editUser={editUser}
-        isLoading={isLoading}
+        isLoading={isFetchingNextPage}
       />
 
       {editingUser && (

@@ -1,3 +1,19 @@
+export interface HairTechnique {
+  name: string;
+  base: number;
+  contour?: number;
+  naturalColor: number[];
+  coloredBase?: string;
+  tonalization: string;
+  brand?: string;
+  teasedQuadrant: number;
+  separateContour?: boolean;
+  rootShaded?: string;
+  technique: string;
+  image: any;
+  bristled: string;
+}
+
 export const hairTechniques = [
   {
     name: "Loiro Médio Clareamento",

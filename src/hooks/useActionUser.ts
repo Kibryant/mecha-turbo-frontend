@@ -3,8 +3,10 @@ import { Alert } from "react-native";
 import { api } from "@/lib/api";
 import dayjs from "dayjs";
 import { User } from "@/core/user";
+import { useQueryClient } from "@tanstack/react-query";
 
-export function useUserActions(token: string, fetchUsersCallback: () => void) {
+export function useUserActions(token: string) {
+  const queryClient = useQueryClient();
   const [editingUser, setEditingUser] = useState<User | null>(null);
   const [showModal, setShowModal] = useState(false);
 
@@ -38,8 +40,12 @@ export function useUserActions(token: string, fetchUsersCallback: () => void) {
           },
         },
       );
+
       Alert.alert("Sucesso", "Usuário adicionado com sucesso");
-      fetchUsersCallback();
+
+      queryClient.invalidateQueries({
+        queryKey: ["get-users"],
+      });
     } catch {
       Alert.alert("Erro", "Ocorreu um erro ao adicionar o usuário");
     }
@@ -53,7 +59,10 @@ export function useUserActions(token: string, fetchUsersCallback: () => void) {
         },
       });
       Alert.alert("Sucesso", "Usuário deletado com sucesso");
-      fetchUsersCallback();
+
+      queryClient.invalidateQueries({
+        queryKey: ["get-users"],
+      });
     } catch {
       Alert.alert("Erro", "Ocorreu um erro ao deletar o usuário");
     }
@@ -67,7 +76,10 @@ export function useUserActions(token: string, fetchUsersCallback: () => void) {
   const closeModal = () => {
     setEditingUser(null);
     setShowModal(false);
-    fetchUsersCallback();
+
+    queryClient.invalidateQueries({
+      queryKey: ["get-users"],
+    });
   };
 
   return {

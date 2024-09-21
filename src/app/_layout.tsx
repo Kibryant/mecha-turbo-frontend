@@ -12,8 +12,11 @@ import {
 } from "@expo-google-fonts/inter";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 SplashScreen.preventAutoHideAsync();
+
+const queryClient = new QueryClient();
 
 export default function Layout() {
   const [fontsLoaded, error] = useFonts({
@@ -34,10 +37,12 @@ export default function Layout() {
   }
 
   return (
-    <AdminProvider>
-      <UserProvider>
-        <Slot />
-      </UserProvider>
-    </AdminProvider>
+    <QueryClientProvider client={queryClient}>
+      <AdminProvider>
+        <UserProvider>
+          <Slot />
+        </UserProvider>
+      </AdminProvider>
+    </QueryClientProvider>
   );
 }
