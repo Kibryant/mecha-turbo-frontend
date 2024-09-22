@@ -23,6 +23,14 @@
       },
       "package": "com.app.dnamechaturbo.br"
     },
+    "androidStatusBar": {
+      "barStyle": "light-content",
+      "backgroundColor": "#000000"
+    },
+    "androidNavigationBar": {
+      "visible": "sticky-immersive",
+      "backgroundColor": "#000000"
+    },
     "web": {
       "bundler": "metro",
       "output": "static",

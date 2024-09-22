@@ -4,6 +4,7 @@ import { View, Text, SafeAreaView } from "react-native";
 import { Image } from "expo-image";
 import { colorCreation } from "@/constants/colorCreation";
 import { useTranslation } from "react-i18next";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 export default function CriacaoDeCor() {
   const { index } = useLocalSearchParams();
@@ -12,8 +13,13 @@ export default function CriacaoDeCor() {
 
   const color = colorCreation[parseInt(index as string)];
 
+  const insets = useSafeAreaInsets();
+
   return (
-    <SafeAreaView className="flex-1 flex-col items-center bg-secondary">
+    <SafeAreaView
+      style={{ paddingBottom: insets.bottom }}
+      className="flex-1 flex-col items-center bg-secondary"
+    >
       <View className="w-full mt-4">
         <Back to="/criacao-de-cores" />
       </View>
