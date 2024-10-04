@@ -158,7 +158,6 @@ export default function SignIn() {
                   <TextInput
                     className="w-full px-2 py-3 border rounded-md border-gray-700 font-body"
                     placeholder={t("Senha")}
-                    secureTextEntry
                     accessibilityLabel={t("Senha")}
                     placeholderTextColor="#374151"
                     style={{ color: "#f3f4f6", fontSize: 12 }}
