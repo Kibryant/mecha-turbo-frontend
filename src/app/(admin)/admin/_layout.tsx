@@ -34,7 +34,7 @@ export default function Layout() {
               className="mr-2"
             >
               <Text>
-                <Ionicons name="menu" size={40} color="#f3f4f6" />
+                <Ionicons name="menu" size={36} color="#f3f4f6" />
               </Text>
             </TouchableOpacity>
           ),
