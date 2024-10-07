@@ -4,7 +4,7 @@ import {
   TextInput,
   Text,
   TouchableHighlight,
-  Pressable,
+  TouchableOpacity,
 } from "react-native";
 import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -120,8 +120,8 @@ export default function AddUserForm({ onSubmit }: Props) {
           <DatePickerModal date={date} onChangeDate={onChangeDate} />
         )}
 
-        <Pressable
-          className="w-full bg-primary rounded-md py-2"
+        <TouchableOpacity
+          className="w-full bg-primary rounded-md py-4"
           onPress={handleSubmit((data) =>
             onSubmit(data.name, data.email, data.password, date),
           )}
@@ -130,7 +130,7 @@ export default function AddUserForm({ onSubmit }: Props) {
           <Text className="text-center text-white font-headingBold">
             Adicionar Usuário
           </Text>
-        </Pressable>
+        </TouchableOpacity>
       </View>
     </View>
   );

@@ -1,21 +1,45 @@
 import Back from "@/components/back";
 import { hairTechniques } from "@/constants/hairTechniques";
 import { toCamelCase } from "@/utils/toCamelCase";
-import { Link, useLocalSearchParams } from "expo-router";
+import { Href, Link, useLocalSearchParams } from "expo-router";
 import {
   View,
   Text,
   ScrollView,
   TouchableOpacity,
   SafeAreaView,
+  ActivityIndicator,
 } from "react-native";
 import { Image } from "expo-image";
 import { useTranslation } from "react-i18next";
+import { useFirebaseImageCache } from "@/hooks/useFirebaseImageCache";
 
 export default function Referencia() {
   const { index } = useLocalSearchParams();
 
   const { t } = useTranslation();
+
+  const { url, loading, error } = useFirebaseImageCache(
+    `catalogo-de-referencia/${Number(index) + 1}.jpg`,
+  );
+
+  if (loading) {
+    return (
+      <SafeAreaView className="bg-secondary flex-1 items-center justify-center">
+        <ActivityIndicator size="large" color="#FE017F" />
+      </SafeAreaView>
+    );
+  }
+
+  if (error) {
+    return (
+      <SafeAreaView className="bg-secondary flex-1 items-center justify-center">
+        <Text className="text-red-500">
+          Ocorreu um erro ao carregar a imagem.
+        </Text>
+      </SafeAreaView>
+    );
+  }
 
   const hairTechnique = hairTechniques[parseInt(index as string)];
 
@@ -33,7 +57,9 @@ export default function Referencia() {
           </View>
           <View className="mt-2 w-full px-2">
             <Image
-              source={hairTechnique.image}
+              source={{
+                uri: url ?? "",
+              }}
               className="w-full h-96 object-cover rounded-md"
               cachePolicy="memory-disk"
             />
@@ -97,7 +123,9 @@ export default function Referencia() {
 
             <View className="mt-4">
               <Link
-                href={`/graficos/${toCamelCase(hairTechnique.technique)}?url=/catalogo-de-referencia/${index}`}
+                href={
+                  `/graficos/${toCamelCase(hairTechnique.technique)}?url=/catalogo-de-referencia/${index}` as Href
+                }
                 asChild
               >
                 <TouchableOpacity className="bg-primary p-2 rounded-md">

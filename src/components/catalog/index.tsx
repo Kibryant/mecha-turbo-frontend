@@ -1,18 +1,30 @@
 import { Link } from "expo-router";
-import { useState } from "react";
 import { Pressable, View, Text, ActivityIndicator } from "react-native";
 import { Image } from "expo-image";
 import { useTranslation } from "react-i18next";
+import { useFirebaseImageCache } from "@/hooks/useFirebaseImageCache";
 
-export default function Catalog({
-  index,
-  image,
-}: {
-  index: number;
-  image: string;
-}) {
+export default function Catalog({ index }: { index: number }) {
   const { t } = useTranslation();
-  const [loading, setLoading] = useState(true);
+  const { url, loading, error } = useFirebaseImageCache(
+    `catalogo-de-referencia/${index + 1}.jpg`,
+  );
+
+  if (error) {
+    return (
+      <Text className="text-red-500">
+        Ocorreu um erro ao carregar a imagem.
+      </Text>
+    );
+  }
+
+  if (loading) {
+    return (
+      <View className="flex-1 items-center justify-center">
+        <ActivityIndicator size="large" color="#FE017F" />
+      </View>
+    );
+  }
 
   return (
     <Link href={`/catalogo-de-referencia/${index}`} key={index} asChild>
@@ -31,9 +43,10 @@ export default function Catalog({
         )}
         <Image
           className="w-full h-52 relative rounded-md overflow-hidden flex-col items-center justify-end"
-          source={image}
+          source={{
+            uri: url ?? "",
+          }}
           contentFit="cover"
-          onLoadEnd={() => setLoading(false)}
           cachePolicy="memory-disk"
           priority={index <= 20 ? "high" : "normal"}
         />

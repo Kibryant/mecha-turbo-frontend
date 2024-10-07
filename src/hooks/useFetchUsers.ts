@@ -26,8 +26,6 @@ export function useFetchUsers(token: string) {
       },
     );
 
-    console.log(response);
-
     if (response.data.status !== 200) {
       Alert.alert("Error", "Error ao buscar usuários");
       return response.data;

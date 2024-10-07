@@ -4,9 +4,11 @@ import { api } from "@/lib/api";
 import dayjs from "dayjs";
 import { User } from "@/core/user";
 import { useQueryClient } from "@tanstack/react-query";
+import { AxiosError, HttpStatusCode } from "axios";
 
 export function useUserActions(token: string) {
   const queryClient = useQueryClient();
+
   const [editingUser, setEditingUser] = useState<User | null>(null);
   const [showModal, setShowModal] = useState(false);
 
@@ -46,7 +48,19 @@ export function useUserActions(token: string) {
       queryClient.invalidateQueries({
         queryKey: ["get-users"],
       });
-    } catch {
+    } catch (error) {
+      if (error instanceof AxiosError) {
+        if (error.response?.status === HttpStatusCode.Conflict) {
+          Alert.alert("Erro", "Usuário já cadastrado");
+          return;
+        }
+
+        if (error.response?.data) {
+          Alert.alert("Erro", error.response.data.message);
+          return;
+        }
+      }
+
       Alert.alert("Erro", "Ocorreu um erro ao adicionar o usuário");
     }
   };
