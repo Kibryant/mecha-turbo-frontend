@@ -9,7 +9,7 @@ interface HeaderProps {
 
 export default function Header({ fadeAnim }: HeaderProps) {
   return (
-    <View className="items-center justify-center p-4">
+    <View className="items-center justify-center px-4 py-2">
       <Animated.View style={{ opacity: fadeAnim }}>
         <Image
           source={logoVertical}

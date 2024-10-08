@@ -88,7 +88,7 @@ export default function SignInAdm() {
 
   return (
     <SafeAreaView style={{ flex: 1 }} className="bg-secondary">
-      <View className="flex-1 items-center justify-center p-4">
+      <View className="flex-1 items-center justify-center px-4">
         <LanguageSelector />
 
         <Header fadeAnim={fadeAnim} />
