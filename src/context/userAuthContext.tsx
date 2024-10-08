@@ -1,7 +1,7 @@
 import { createContext, useContext, PropsWithChildren } from "react";
 import { api } from "@/lib/api";
 import { Alert } from "react-native";
-import { HttpStatusCode } from "axios";
+import { AxiosError, HttpStatusCode } from "axios";
 import { useAsyncStorage } from "@/hooks/useAsyncStorage";
 import { isSubscriptionActive } from "@/utils/isSubscriptionActive";
 
@@ -48,12 +48,7 @@ export function UserProvider(props: PropsWithChildren) {
           try {
             const response = await api.post("/login", { email, password });
 
-            const { message, status, user } = response.data;
-
-            if (status !== HttpStatusCode.Ok) {
-              Alert.alert("Erro", message);
-              return { success: false };
-            }
+            const { user } = response.data;
 
             if (!isSubscriptionActive(user.expirationDate)) {
               Alert.alert("Erro", "Conta expirada.");
@@ -64,7 +59,12 @@ export function UserProvider(props: PropsWithChildren) {
 
             return { success: true };
           } catch (error) {
-            if (error instanceof Error) {
+            if (error instanceof AxiosError) {
+              if (error.response?.status === HttpStatusCode.NotFound) {
+                Alert.alert("Erro", "Usuário não encontrado.");
+                return { success: false };
+              }
+
               Alert.alert("Erro", "Erro ao fazer login. Tente novamente.");
               return { success: false };
             }
