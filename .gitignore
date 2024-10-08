@@ -25,6 +25,6 @@ expo-env.d.ts
 .env.local
 .env*
 
-
-#
 dna-mecha-turbo-7b53984033ce.json
+
+eas.json
