@@ -1,8 +1,7 @@
 import Axios from "axios";
-import { env } from "./env";
 
 export const api = Axios.create({
-  baseURL: env.EXPO_PUBLIC_BACKEND_URL,
+  baseURL: "https://mecha-turbo-backend.vercel.app",
   headers: {
     "Content-Type": "application/json",
   },
