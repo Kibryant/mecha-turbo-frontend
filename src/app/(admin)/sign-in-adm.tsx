@@ -106,12 +106,6 @@ export default function SignInAdm() {
               </Text>
             </View>
 
-            <View className="w-full flex-row justify-between">
-              <Link href="/sign-in" className="text-primary mb-2 text-center">
-                {t("Acessar como usuário")}
-              </Link>
-            </View>
-
             <View className="w-full mb-2">
               <Controller
                 control={control}
@@ -209,6 +203,12 @@ export default function SignInAdm() {
                 </Text>
               )}
             </TouchableOpacity>
+
+            <View className="w-full flex-row justify-center mt-3">
+              <Link href="/sign-in" className="text-gray-800 mb-2 text-center">
+                {t("Acesse como usuário")}
+              </Link>
+            </View>
           </View>
         </Animated.View>
 
