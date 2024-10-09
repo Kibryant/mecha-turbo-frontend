@@ -28,7 +28,7 @@ export default function TecnicasEspecialistas() {
           </Text>
           <TouchableOpacity
             onPress={() =>
-              openLink("https://especialistas20planostart.club.hotmart.com/")
+              openLink("https://mechaturbo.club.hotmart.com/login")
             }
             className="w-full border border-primary rounded-md p-4 mt-2"
           >
