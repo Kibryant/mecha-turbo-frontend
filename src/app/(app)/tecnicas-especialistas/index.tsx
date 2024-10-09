@@ -24,7 +24,7 @@ export default function TecnicasEspecialistas() {
       <View className="w-full px-4 justify-center items-center mt-4">
         <View className="w-full border border-primary rounded-md p-4">
           <Text className="text-gray-100 font-headingBold text-left">
-            {t("É nossa aluna? Acesse o conteúdo!")}
+            {t("É nossa aluna?")}
           </Text>
           <TouchableOpacity
             onPress={() =>
@@ -33,13 +33,13 @@ export default function TecnicasEspecialistas() {
             className="w-full border border-primary rounded-md p-4 mt-2"
           >
             <Text className="text-gray-100 font-headingBold text-center">
-              {t("Acessar conteúdo")}
+              {t("Acesse conteúdo")}
             </Text>
           </TouchableOpacity>
         </View>
         <View className="w-full border border-primary rounded-md p-4 mt-4">
           <Text className="text-gray-100 font-headingBold text-left">
-            {t("Ainda não é nossa aluna? Fale com o nosso suporte!")}
+            {t("Ainda não é nossa aluna?")}
           </Text>
           <TouchableOpacity
             onPress={() =>
@@ -50,7 +50,7 @@ export default function TecnicasEspecialistas() {
             className="w-full border border-primary rounded-md p-4 mt-2"
           >
             <Text className="text-gray-100 font-headingBold text-center">
-              {t("Falar com o suporte")}
+              {t("Fale com o suporte")}
             </Text>
           </TouchableOpacity>
         </View>
