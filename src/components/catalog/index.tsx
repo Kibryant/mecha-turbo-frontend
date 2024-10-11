@@ -3,8 +3,9 @@ import { Pressable, View, Text, ActivityIndicator } from "react-native";
 import { Image } from "expo-image";
 import { useTranslation } from "react-i18next";
 import { useFirebaseImageCache } from "@/hooks/useFirebaseImageCache";
+import { memo } from "react";
 
-export default function Catalog({ index }: { index: number }) {
+function CatalogComponent({ index }: { index: number }) {
   const { t } = useTranslation();
   const { url, loading, error } = useFirebaseImageCache(
     `catalogo-de-referencia/${index + 1}.jpg`,
@@ -48,7 +49,8 @@ export default function Catalog({ index }: { index: number }) {
           }}
           contentFit="cover"
           cachePolicy="memory-disk"
-          priority={index <= 20 ? "high" : "normal"}
+          priority={index <= 10 ? "high" : "normal"}
+          blurRadius={url ? 0 : 20}
         />
         <View className="absolute top-3 left-3 w-8 h-8 bg-primary rounded-full items-center justify-center font-body">
           <Text className="text-gray-100 font-headingBold">{index + 1}</Text>
@@ -62,3 +64,7 @@ export default function Catalog({ index }: { index: number }) {
     </Link>
   );
 }
+
+const Catalog = memo(CatalogComponent);
+
+export default Catalog;

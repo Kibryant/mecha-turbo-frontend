@@ -16,7 +16,7 @@ export default function Graficos() {
         </View>
 
         <View>
-          <Text className="text-2xl font-headingBold text-center mt-4 text-primary">
+          <Text className="text-3xl font-headingBold text-center mt-4 text-primary">
             {t("Gráficos")}
           </Text>
         </View>

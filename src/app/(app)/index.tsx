@@ -16,9 +16,7 @@ export default function Home() {
 
   const { t } = useTranslation();
 
-  const name = userObject
-    ? userObject.name
-    : null || (token ? "Administrador" : null);
+  const name = userObject?.name || (token ? "Administrador" : null);
 
   return (
     <View className="flex-1 flex-col items-center justify-between bg-secondary">
@@ -31,7 +29,7 @@ export default function Home() {
         </Text>
       </View>
 
-      <View className="w-3/4 flex-col items-center gap-y-2">
+      <View className="w-full flex-col items-center gap-y-2 px-6">
         <Text className="text-lg font-headingBold text-gray-300 mb-2">
           {t("Escolha a opção desejada")}
         </Text>

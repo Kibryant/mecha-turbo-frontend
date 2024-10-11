@@ -14,7 +14,7 @@ export default function CriaçaoDeCores() {
         <Back to="/" />
       </View>
       <View>
-        <Text className="text-2xl font-headingBold text-center mt-4 text-gray-100">
+        <Text className="text-3xl font-headingBold text-center mt-4 text-primary">
           {t("Crie Nuances")}
         </Text>
       </View>
