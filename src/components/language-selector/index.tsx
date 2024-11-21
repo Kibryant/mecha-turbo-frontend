@@ -16,7 +16,7 @@ export default function LanguageSelector() {
   return (
     <View className="absolute top-16 right-4">
       <Pressable onPress={() => setModalVisible(true)}>
-        {i18n.language === "pt-BR" && <Br />}
+        {i18n.language === "pt" && <Br />}
         {i18n.language === "es" && <Es />}
         {i18n.language === "en" && <Us />}
       </Pressable>

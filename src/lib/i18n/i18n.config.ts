@@ -8,7 +8,7 @@ import { getLocales } from "expo-localization";
 const deviceLanguage = getLocales()[0].languageCode;
 
 const resources = {
-  "pt-BR": {
+  pt: {
     translation: ptBR,
   },
   es: {
@@ -22,8 +22,8 @@ const resources = {
 i18next.use(initReactI18next).init({
   compatibilityJSON: "v3",
   debug: process.env.NODE_ENV === "development",
-  lng: deviceLanguage || "pt-BR",
-  fallbackLng: deviceLanguage || "pt-BR",
+  lng: deviceLanguage || "pt",
+  fallbackLng: deviceLanguage || "pt",
   interpolation: {
     escapeValue: false,
   },
