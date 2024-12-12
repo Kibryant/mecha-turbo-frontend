@@ -4,6 +4,7 @@ import { Alert } from "react-native";
 import { AxiosError, HttpStatusCode } from "axios";
 import { useAsyncStorage } from "@/hooks/useAsyncStorage";
 import { isSubscriptionActive } from "@/utils/isSubscriptionActive";
+import { useTranslation } from "react-i18next";
 
 const UserAuthContext = createContext<{
   signIn: ({
@@ -39,6 +40,7 @@ export function useAuthUser() {
 }
 
 export function UserProvider(props: PropsWithChildren) {
+  const { t } = useTranslation();
   const [[isLoading, user], setUser] = useAsyncStorage("user");
 
   return (
@@ -52,6 +54,7 @@ export function UserProvider(props: PropsWithChildren) {
 
             if (!isSubscriptionActive(user.expirationDate)) {
               Alert.alert("Erro", "Conta expirada.");
+
               return { success: false };
             }
 
@@ -61,7 +64,7 @@ export function UserProvider(props: PropsWithChildren) {
           } catch (error) {
             if (error instanceof AxiosError) {
               if (error.response?.status === HttpStatusCode.NotFound) {
-                Alert.alert("Erro", "Usuário não encontrado.");
+                Alert.alert("Erro", t("Usuário não encontrado."));
                 return { success: false };
               }
 
