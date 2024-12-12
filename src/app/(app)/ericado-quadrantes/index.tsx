@@ -38,6 +38,20 @@ export default function EriçadoQuadrantes() {
         {t("Eriçados e Quadrantes")}
       </Text>
       <View className="w-full px-4 justify-center items-center mt-8">
+        {!isVideoReady && (
+          <View
+            style={{
+              height: 200,
+              width: VIDEO_WIDTH,
+              backgroundColor: "#000",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <ActivityIndicator size="large" color="#fe017f" />
+          </View>
+        )}
+
         <YoutubeIframe
           videoId="Oro4Z3_0x3s"
           height={isVideoReady ? 200 : 0}
@@ -45,8 +59,6 @@ export default function EriçadoQuadrantes() {
           onReady={() => setIsVideoReady(true)}
           onFullScreenChange={onFullScreenChange}
         />
-
-        {!isVideoReady && <ActivityIndicator size="large" color="#fe017f" />}
 
         <View className="mt-2 w-full">
           <Button

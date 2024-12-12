@@ -28,7 +28,9 @@ export default function TecnicasEspecialistas() {
           </Text>
           <TouchableOpacity
             onPress={() =>
-              openLink("https://hotmart.com/pt-br/club/mecha-turbo-debora-martins-cursos/products/4204207?from=ListProductsPage&_gl=1*kf1o6n*_gcl_au*Njg1MTE5MzE5LjE3MjUyNzkzMjQ.*_ga*ODEwNDAwMzEzLjE3MjUyNzkzMjg.*_ga_GQH2V1F11Q*MTczMTUyNTg1MC4yMjMuMS4xNzMxNTI4MTk2LjQxLjAuMTQ5OTY2NDc1Nw")
+              openLink(
+                "https://hotmart.com/pt-br/club/mecha-turbo-debora-martins-cursos/products/4204207?from=ListProductsPage&_gl=1*kf1o6n*_gcl_au*Njg1MTE5MzE5LjE3MjUyNzkzMjQ.*_ga*ODEwNDAwMzEzLjE3MjUyNzkzMjg.*_ga_GQH2V1F11Q*MTczMTUyNTg1MC4yMjMuMS4xNzMxNTI4MTk2LjQxLjAuMTQ5OTY2NDc1Nw",
+              )
             }
             className="w-full border border-primary rounded-md p-4 mt-2"
           >

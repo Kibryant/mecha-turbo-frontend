@@ -13,9 +13,7 @@ import Button from "@/components/button";
 
 export default function TesteDeMecha() {
   const { width } = useWindowDimensions();
-
   const { t } = useTranslation();
-
   const [isVideoReady, setIsVideoReady] = useState(false);
 
   const VIDEO_WIDTH = width - 16 * 2;
@@ -38,6 +36,20 @@ export default function TesteDeMecha() {
         {t("Teste de Mecha")}
       </Text>
       <View className="w-full px-4 justify-center items-center mt-8">
+        {!isVideoReady && (
+          <View
+            style={{
+              height: 200,
+              width: VIDEO_WIDTH,
+              backgroundColor: "#000",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <ActivityIndicator size="large" color="#fe017f" />
+          </View>
+        )}
+
         <YoutubeIframe
           videoId="0y2aMvCqdKE"
           height={isVideoReady ? 200 : 0}
@@ -45,7 +57,6 @@ export default function TesteDeMecha() {
           onReady={() => setIsVideoReady(true)}
           onFullScreenChange={onFullScreenChange}
         />
-        {!isVideoReady && <ActivityIndicator size="large" color="#fe017f" />}
         <View className="mt-2 w-full">
           <Button
             href="tecnicas-especialistas?url=/teste-de-mecha"
