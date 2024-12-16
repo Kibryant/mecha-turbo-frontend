@@ -16,7 +16,7 @@ export default function Grafico() {
 
   return (
     <SafeAreaView className="bg-secondary">
-      <ScrollView className="px-2">
+      <ScrollView>
         <View>
           <View className="w-full mt-2">
             <Back to={url ?? "/graficos"} />
