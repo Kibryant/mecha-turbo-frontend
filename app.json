@@ -41,8 +41,7 @@
       "expo-router",
       "expo-secure-store",
       "expo-localization",
-      "expo-font",
-      "./app.plugin.js"
+      "expo-font"    
     ],
     "experiments": {
       "typedRoutes": true
