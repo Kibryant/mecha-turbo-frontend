@@ -1,8 +1,8 @@
 import { View, Text, ActivityIndicator } from "react-native";
-import { HairTechnique, hairTechniques } from "@/constants/hairTechniques";
+import { type HairTechnique, hairTechniques } from "@/constants/hairTechniques";
 import Catalog from "@/components/catalog";
 import Back from "@/components/back";
-import { FlashList, ListRenderItemInfo } from "@shopify/flash-list";
+import { FlashList, type ListRenderItemInfo } from "@shopify/flash-list";
 import { useTranslation } from "react-i18next";
 import { useCallback, useState } from "react";
 

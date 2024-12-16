@@ -21,11 +21,11 @@ export default function Graficos() {
           </Text>
         </View>
 
-        <View className="w-3/4 flex-col items-center gap-y-2 mt-20 pb-20">
+        <View className="flex-col items-center gap-y-2 mt-20 pb-20 px-6">
           <Text className="text-xl font-headingBold text-gray-100">
             {t("Escolha a opção desejada")}!
           </Text>
-          {graphics.map((graphic, index) => (
+          {graphics.map((graphic) => (
             <Link
               href={`/graficos/${toCamelCase(graphic)}?url=graficos`}
               className="p-4 w-full  bg-primary rounded-md mt-2"

@@ -6,7 +6,7 @@ import { logoHorizontal } from "@/constants/logo";
 import { Redirect } from "expo-router";
 import { isSubscriptionActive } from "@/utils/isSubscriptionActive";
 import { useAuthUser } from "@/context/userAuthContext";
-import { User } from "@/core/user";
+import type { User } from "@/core/user";
 import { useAuthAdmin } from "@/context/adminAuthContext";
 import { Image } from "expo-image";
 import { useTranslation } from "react-i18next";
@@ -51,7 +51,8 @@ export default function Layout() {
           drawerInactiveTintColor: "#f3f4f6",
           headerStyle: {
             backgroundColor: "#0d0d0d",
-            borderBottomColor: "#e91e63",
+            borderBottomWidth: 0.4,
+            borderBottomColor: "#f3f4f6",
           },
           drawerStyle: {
             backgroundColor: "#0D0D0D",

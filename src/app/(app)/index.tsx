@@ -2,7 +2,7 @@ import Button from "@/components/button";
 import { logoVertical } from "@/constants/logo";
 import { useAuthAdmin } from "@/context/adminAuthContext";
 import { useAuthUser } from "@/context/userAuthContext";
-import { User } from "@/core/user";
+import type { User } from "@/core/user";
 import { Link } from "expo-router";
 import { useTranslation } from "react-i18next";
 import { View, Text, Pressable } from "react-native";

@@ -1,7 +1,7 @@
 import Back from "@/components/back";
 import { hairTechniques } from "@/constants/hairTechniques";
 import { toCamelCase } from "@/utils/toCamelCase";
-import { Href, Link, useLocalSearchParams } from "expo-router";
+import { type Href, Link, useLocalSearchParams } from "expo-router";
 import {
   View,
   Text,
@@ -15,18 +15,20 @@ import { useTranslation } from "react-i18next";
 import { useFirebaseImageCache } from "@/hooks/useFirebaseImageCache";
 
 export default function Referencia() {
-  const { index } = useLocalSearchParams();
+  const { index } = useLocalSearchParams<{ index: string }>();
 
   const { t } = useTranslation();
 
   const { url, loading, error } = useFirebaseImageCache(
-    `catalogo-de-referencia/${Number(index) + 1}.jpg`,
+    `catalogo-de-referencias/${Number(index) + 1}.jpg`,
   );
 
   if (loading) {
     return (
       <SafeAreaView className="bg-secondary flex-1 items-center justify-center">
-        <ActivityIndicator size="large" color="#FE017F" />
+        <View className="w-full h-96 flex items-center justify-center">
+          <ActivityIndicator size="large" color="#FE017F" />
+        </View>
       </SafeAreaView>
     );
   }
@@ -41,7 +43,7 @@ export default function Referencia() {
     );
   }
 
-  const hairTechnique = hairTechniques[parseInt(index as string)];
+  const hairTechnique = hairTechniques[Number.parseInt(index)];
 
   return (
     <SafeAreaView className="bg-secondary pb-4">
@@ -52,7 +54,7 @@ export default function Referencia() {
           </View>
           <View className="mt-4">
             <Text className="text-3xl font-headingBold text-center text-primary">
-              {t("Referência")} {parseInt(index as string) + 1}
+              {t("Referência")} {Number.parseInt(index) + 1}
             </Text>
           </View>
           <View className="mt-2 w-full px-2">

@@ -7,8 +7,9 @@ import { memo } from "react";
 
 function CatalogComponent({ index }: { index: number }) {
   const { t } = useTranslation();
+
   const { url, loading, error } = useFirebaseImageCache(
-    `catalogo-de-referencia/${index + 1}.jpg`,
+    `catalogo-de-referencias/${index + 1}.jpg`,
   );
 
   if (error) {
@@ -16,14 +17,6 @@ function CatalogComponent({ index }: { index: number }) {
       <Text className="text-red-500">
         Ocorreu um erro ao carregar a imagem.
       </Text>
-    );
-  }
-
-  if (loading) {
-    return (
-      <View className="flex-1 items-center justify-center">
-        <ActivityIndicator size="large" color="#FE017F" />
-      </View>
     );
   }
 
@@ -42,6 +35,7 @@ function CatalogComponent({ index }: { index: number }) {
             }}
           />
         )}
+
         <Image
           className="w-full h-52 relative rounded-md overflow-hidden flex-col items-center justify-end"
           source={{

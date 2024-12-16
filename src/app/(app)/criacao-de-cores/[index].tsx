@@ -1,19 +1,38 @@
 import Back from "@/components/back";
 import { useLocalSearchParams } from "expo-router";
-import { View, Text, SafeAreaView, ScrollView } from "react-native";
+import {
+  View,
+  Text,
+  SafeAreaView,
+  ScrollView,
+  ActivityIndicator,
+} from "react-native";
 import { Image } from "expo-image";
 import { colorCreation } from "@/constants/colorCreation";
 import { useTranslation } from "react-i18next";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { useFirebaseImageCache } from "@/hooks/useFirebaseImageCache";
 
 export default function CriacaoDeCor() {
-  const { index } = useLocalSearchParams();
+  const { index } = useLocalSearchParams<{ index: string }>();
 
   const { t } = useTranslation();
 
-  const color = colorCreation[parseInt(index as string)];
+  const color = colorCreation[Number.parseInt(index)];
 
   const insets = useSafeAreaInsets();
+
+  const { url, loading, error } = useFirebaseImageCache(
+    `criacao-de-cores/${Number.parseInt(index) + 1}.png`,
+  );
+
+  if (error) {
+    return (
+      <Text className="text-red-500">
+        Ocorreu um erro ao carregar a imagem.
+      </Text>
+    );
+  }
 
   return (
     <SafeAreaView
@@ -30,11 +49,19 @@ export default function CriacaoDeCor() {
           </Text>
         </View>
         <View className="mt-2 w-full px-2">
-          <Image
-            source={color.image}
-            className="w-full h-96 object-cover rounded-md"
-            cachePolicy="memory-disk"
-          />
+          {loading && (
+            <View className="w-full h-96 relative rounded-md overflow-hidden flex-col items-center justify-center">
+              <ActivityIndicator size="large" color="#FE017F" />
+            </View>
+          )}
+
+          {!loading && (
+            <Image
+              source={{ uri: url ?? "" }}
+              className="w-full h-96 object-cover rounded-md"
+              cachePolicy="memory-disk"
+            />
+          )}
         </View>
         <View className="w-full justify-end px-2 mt-4">
           <View>

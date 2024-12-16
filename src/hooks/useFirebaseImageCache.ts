@@ -23,11 +23,13 @@ export function useFirebaseImageCache(imagePath: string) {
         }
 
         const imageRef = ref(firebaseStorage, imagePath);
+
         const downloadUrl = await getDownloadURL(imageRef);
 
         await AsyncStorage.setItem(imagePath, downloadUrl);
         setUrl(downloadUrl);
       } catch (err) {
+        console.error(err);
         setError(err as Error);
         setUrl(null);
       } finally {

@@ -26,7 +26,7 @@ export default function CriaçaoDeCores() {
       <FlashList
         data={colorCreation}
         renderItem={({ item, index }) => (
-          <ColorCreation name={item.name} index={index} image={item.image} />
+          <ColorCreation name={item.name} index={index} />
         )}
         keyExtractor={(_, index) => index.toString()}
         numColumns={2}

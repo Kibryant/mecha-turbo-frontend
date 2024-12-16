@@ -8,7 +8,7 @@ export default function Admin() {
   const { signOut } = useAuthAdmin();
 
   return (
-    <View className="flex-1 bg-secondary px-4 items-center justify-between">
+    <View className="flex-1 bg-secondary items-center justify-between">
       <View className="w-full">
         <View className="flex-col items-center gap-y-1 mt-4">
           <Text className="text-3xl font-headingBold text-primary">
@@ -19,7 +19,7 @@ export default function Admin() {
           </Text>
         </View>
 
-        <View className="w-full items-center">
+        <View className="w-full items-center px-6">
           <Text className="text-2xl font-headingBold text-gray-100 text-center mt-20">
             O que deseja fazer?
           </Text>

@@ -10,12 +10,12 @@ import {
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Link, Redirect, useRouter } from "expo-router";
 import { useAuthUser } from "@/context/userAuthContext";
-import { User } from "@/core/user";
+import type { User } from "@/core/user";
 import { useTranslation } from "react-i18next";
 import LanguageSelector from "@/components/language-selector";
-import { useForm, Controller, SubmitHandler } from "react-hook-form";
+import { useForm, Controller, type SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { SignInSchema, signInSchema } from "@/lib/schemas";
+import { type SignInSchema, signInSchema } from "@/lib/schemas";
 import { useAuthAdmin } from "@/context/adminAuthContext";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
