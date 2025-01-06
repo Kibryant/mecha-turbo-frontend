@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Alert } from "react-native";
 import { api } from "@/lib/api";
 import dayjs from "dayjs";
-import { User } from "@/core/user";
+import type { User } from "@/core/user";
 import { useQueryClient } from "@tanstack/react-query";
 import { AxiosError, HttpStatusCode } from "axios";
 
@@ -12,12 +12,15 @@ export function useUserActions(token: string) {
   const [editingUser, setEditingUser] = useState<User | null>(null);
   const [showModal, setShowModal] = useState(false);
 
-  const addUser = async (
-    name: string,
-    email: string,
-    password: string,
-    date: Date,
-  ) => {
+  const addUser = async ({
+    name,
+    email,
+    date,
+  }: {
+    name: string;
+    email: string;
+    date: Date;
+  }) => {
     if (!date) {
       Alert.alert("Erro", "Selecione a data de compra");
       return;
@@ -32,7 +35,6 @@ export function useUserActions(token: string) {
         {
           name,
           email,
-          password,
           purchaseDate,
           expirationDate,
         },

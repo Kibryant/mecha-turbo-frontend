@@ -5,6 +5,7 @@ import { View, Text } from "react-native";
 
 export default function AdicionarUsuario() {
   const { token } = useAuthAdmin();
+
   const { addUser } = useUserActions(token as string);
 
   return (

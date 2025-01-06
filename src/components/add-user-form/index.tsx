@@ -8,12 +8,20 @@ import {
 } from "react-native";
 import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { createUsersSchema, CreateUserSchema } from "@/lib/schemas";
+import { createUsersSchema, type CreateUserSchema } from "@/lib/schemas";
 import DatePickerModal from "@/components/date-picker-modal";
-import { DateTimePickerEvent } from "@react-native-community/datetimepicker";
+import type { DateTimePickerEvent } from "@react-native-community/datetimepicker";
 
 interface Props {
-  onSubmit: (name: string, email: string, password: string, date: Date) => void;
+  onSubmit: ({
+    name,
+    email,
+    date,
+  }: {
+    name: string;
+    email: string;
+    date: Date;
+  }) => void;
 }
 
 export default function AddUserForm({ onSubmit }: Props) {
@@ -26,14 +34,13 @@ export default function AddUserForm({ onSubmit }: Props) {
     defaultValues: {
       name: "",
       email: "",
-      password: "",
     },
   });
 
   const [date, setDate] = useState<Date>(new Date());
   const [showDatePicker, setShowDatePicker] = useState(false);
 
-  const onChangeDate = (event: DateTimePickerEvent, selectedDate?: Date) => {
+  const onChangeDate = (_: DateTimePickerEvent, selectedDate?: Date) => {
     const currentDate = selectedDate || date;
     setShowDatePicker(false);
     setDate(currentDate);
@@ -80,25 +87,6 @@ export default function AddUserForm({ onSubmit }: Props) {
         {errors.email && (
           <Text className="text-red-500">{errors.email.message}</Text>
         )}
-        <Controller
-          control={control}
-          render={({ field: { onBlur, onChange } }) => (
-            <TextInput
-              className="w-full p-2 border border-gray-300 rounded-md mb-2"
-              placeholder="Senha do Usuário"
-              secureTextEntry
-              accessibilityLabel="Senha"
-              placeholderTextColor="#374151"
-              style={{ color: "#f3f4f6", fontSize: 12 }}
-              onChangeText={onChange}
-              onBlur={onBlur}
-            />
-          )}
-          name="password"
-        />
-        {errors.password && (
-          <Text className="text-red-500">{errors.password.message}</Text>
-        )}
 
         <View className="w-full gap-y-2">
           <TouchableHighlight
@@ -122,9 +110,7 @@ export default function AddUserForm({ onSubmit }: Props) {
 
         <TouchableOpacity
           className="w-full bg-primary rounded-md py-4"
-          onPress={handleSubmit((data) =>
-            onSubmit(data.name, data.email, data.password, date),
-          )}
+          onPress={handleSubmit((data) => onSubmit({ ...data, date }))}
           disabled={isLoading}
         >
           <Text className="text-center text-white font-headingBold">
