@@ -1,10 +1,5 @@
-import { useCallback, useState } from "react";
-import {
-  View,
-  Text,
-  ActivityIndicator,
-  useWindowDimensions,
-} from "react-native";
+import { useCallback } from "react";
+import { View, Text, useWindowDimensions } from "react-native";
 import YoutubeIframe from "react-native-youtube-iframe";
 import * as ScreenOrientation from "expo-screen-orientation";
 import Back from "@/components/back";
@@ -15,8 +10,6 @@ export default function EriçadoQuadrantes() {
   const { width } = useWindowDimensions();
 
   const { t } = useTranslation();
-
-  const [isVideoReady, setIsVideoReady] = useState(false);
 
   const VIDEO_WIDTH = width - 16 * 2;
 
@@ -38,25 +31,10 @@ export default function EriçadoQuadrantes() {
         {t("Eriçados e Quadrantes")}
       </Text>
       <View className="w-full px-4 justify-center items-center mt-8">
-        {!isVideoReady && (
-          <View
-            style={{
-              height: 200,
-              width: VIDEO_WIDTH,
-              backgroundColor: "#000",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <ActivityIndicator size="large" color="#fe017f" />
-          </View>
-        )}
-
         <YoutubeIframe
           videoId="Oro4Z3_0x3s"
-          height={isVideoReady ? 200 : 0}
+          height={200}
           width={VIDEO_WIDTH}
-          onReady={() => setIsVideoReady(true)}
           onFullScreenChange={onFullScreenChange}
         />
 

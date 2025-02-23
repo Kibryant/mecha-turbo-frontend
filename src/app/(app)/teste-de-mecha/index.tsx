@@ -1,10 +1,5 @@
-import { useCallback, useState } from "react";
-import {
-  View,
-  Text,
-  ActivityIndicator,
-  useWindowDimensions,
-} from "react-native";
+import { useCallback } from "react";
+import { View, Text, useWindowDimensions } from "react-native";
 import YoutubeIframe from "react-native-youtube-iframe";
 import * as ScreenOrientation from "expo-screen-orientation";
 import Back from "@/components/back";
@@ -14,7 +9,6 @@ import Button from "@/components/button";
 export default function TesteDeMecha() {
   const { width } = useWindowDimensions();
   const { t } = useTranslation();
-  const [isVideoReady, setIsVideoReady] = useState(false);
 
   const VIDEO_WIDTH = width - 16 * 2;
 
@@ -36,25 +30,10 @@ export default function TesteDeMecha() {
         {t("Teste de Mecha")}
       </Text>
       <View className="w-full px-4 justify-center items-center mt-8">
-        {!isVideoReady && (
-          <View
-            style={{
-              height: 200,
-              width: VIDEO_WIDTH,
-              backgroundColor: "#000",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <ActivityIndicator size="large" color="#fe017f" />
-          </View>
-        )}
-
         <YoutubeIframe
           videoId="0y2aMvCqdKE"
-          height={isVideoReady ? 200 : 0}
+          height={200}
           width={VIDEO_WIDTH}
-          onReady={() => setIsVideoReady(true)}
           onFullScreenChange={onFullScreenChange}
         />
         <View className="mt-2 w-full">
