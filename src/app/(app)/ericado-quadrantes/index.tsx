@@ -1,5 +1,5 @@
-import { useCallback } from "react";
-import { View, Text, useWindowDimensions } from "react-native";
+import { useCallback, useState } from "react";
+import { View, Text, useWindowDimensions, Pressable } from "react-native";
 import YoutubeIframe from "react-native-youtube-iframe";
 import * as ScreenOrientation from "expo-screen-orientation";
 import Back from "@/components/back";
@@ -11,7 +11,7 @@ export default function EriçadoQuadrantes() {
 
   const { t } = useTranslation();
 
-  const VIDEO_WIDTH = width - 16 * 2;
+  const [playing, setPlaying] = useState(false);
 
   const onFullScreenChange = useCallback((isFullScreen: boolean) => {
     if (isFullScreen) {
@@ -20,6 +20,12 @@ export default function EriçadoQuadrantes() {
       ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.PORTRAIT);
     }
   }, []);
+
+  const togglePlaying = useCallback(() => {
+    setPlaying((prev) => !prev);
+  }, []);
+
+  const VIDEO_WIDTH = width - 32;
 
   return (
     <View className="bg-secondary flex-1 items-center">
@@ -33,12 +39,21 @@ export default function EriçadoQuadrantes() {
       <View className="w-full px-4 justify-center items-center mt-8">
         <YoutubeIframe
           videoId="Oro4Z3_0x3s"
-          height={200}
+          height={270}
           width={VIDEO_WIDTH}
           onFullScreenChange={onFullScreenChange}
+          play={playing}
         />
 
         <View className="mt-2 w-full">
+          <Pressable
+            className="p-4 w-full  bg-primary rounded-md mt-2"
+            onPress={togglePlaying}
+          >
+            <Text className="text-gray-100 font-headingBold text-center">
+              {playing ? t("Pausar") : t("Assistir")}
+            </Text>
+          </Pressable>
           <Button
             href="tecnicas-especialistas?url=/ericado-quadrantes"
             text="Assistir mais aulas"

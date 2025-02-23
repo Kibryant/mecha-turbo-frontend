@@ -1,4 +1,4 @@
-import { Link } from "expo-router";
+import { type Href, Link } from "expo-router";
 import { useTranslation } from "react-i18next";
 import { Pressable, Text } from "react-native";
 
@@ -12,7 +12,7 @@ export default function Button({ text, href }: ButtonProps) {
 
   return (
     <Link
-      href={`/${href}`}
+      href={`/${href}` as Href}
       className="p-4 w-full  bg-primary rounded-md mt-2"
       asChild
     >
