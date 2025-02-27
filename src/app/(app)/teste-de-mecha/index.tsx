@@ -9,7 +9,7 @@ import Button from "@/components/button";
 export default function TesteDeMecha() {
   const { width } = useWindowDimensions();
 
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const [playing, setPlaying] = useState(false);
 
@@ -38,7 +38,7 @@ export default function TesteDeMecha() {
       </Text>
       <View className="w-full px-4 justify-center items-center mt-8">
         <YoutubeIframe
-          videoId="0y2aMvCqdKE"
+          videoId={i18n.language === "es" ? "KWPAIi8yjgo" : "0y2aMvCqdKE"}
           height={270}
           width={VIDEO_WIDTH}
           play={playing}

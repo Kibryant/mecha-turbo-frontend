@@ -9,7 +9,7 @@ import Button from "@/components/button";
 export default function EriçadoQuadrantes() {
   const { width } = useWindowDimensions();
 
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const [playing, setPlaying] = useState(false);
 
@@ -38,7 +38,7 @@ export default function EriçadoQuadrantes() {
       </Text>
       <View className="w-full px-4 justify-center items-center mt-8">
         <YoutubeIframe
-          videoId="Oro4Z3_0x3s"
+          videoId={i18n.language === "es" ? "LGvVf9mQCMk" : "Oro4Z3_0x3s"}
           height={270}
           width={VIDEO_WIDTH}
           onFullScreenChange={onFullScreenChange}

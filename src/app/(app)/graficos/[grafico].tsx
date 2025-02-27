@@ -5,14 +5,21 @@ import { useLocalSearchParams } from "expo-router";
 import { View, Text, ScrollView, SafeAreaView } from "react-native";
 import Button from "@/components/button";
 import { Graphic } from "@/components/graphic";
+import { useTranslation } from "react-i18next";
+import { graphicsImagesEs } from "@/constants/graphicsImageEs";
 
 export default function Grafico() {
+  const { i18n } = useTranslation();
+
   const { grafico, url } = useLocalSearchParams<{
     grafico: string;
     url?: string;
   }>();
 
-  const graphicImages = graphicsImages[grafico];
+  const graphicImages =
+    i18n.language === "es"
+      ? graphicsImagesEs[grafico]
+      : graphicsImages[grafico];
 
   return (
     <SafeAreaView className="bg-secondary">
