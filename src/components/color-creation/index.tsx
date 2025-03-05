@@ -1,5 +1,11 @@
 import { Link } from "expo-router";
-import { Pressable, View, Text, ActivityIndicator } from "react-native";
+import {
+  Pressable,
+  View,
+  Text,
+  ActivityIndicator,
+  TouchableOpacity,
+} from "react-native";
 import { Image } from "expo-image";
 import { useTranslation } from "react-i18next";
 import { useFirebaseImageCache } from "@/hooks/useFirebaseImageCache";
@@ -12,7 +18,7 @@ interface ColorCreationProps {
 export default function ColorCreation({ name, index }: ColorCreationProps) {
   const { t } = useTranslation();
 
-  const { url, loading, error } = useFirebaseImageCache(
+  const { url, loading, error, onRetry } = useFirebaseImageCache(
     `criacao-de-cores/${index + 1}.png`,
   );
 
@@ -26,12 +32,19 @@ export default function ColorCreation({ name, index }: ColorCreationProps) {
 
   if (error) {
     return (
-      <Text className="text-red-500">
-        Ocorreu um erro ao carregar a imagem.
-      </Text>
+      <View className="w-full h-52 relative rounded-md overflow-hidden flex-col items-center justify-center border border-red-300">
+        <Text className="text-red-600 font-bold mt-2">
+          {t("Erro ao carregar imagem")}
+        </Text>
+        <TouchableOpacity
+          onPress={onRetry}
+          className="mt-3 px-4 py-2 bg-red-500 rounded-md"
+        >
+          <Text className="text-white font-bold">{t("Tentar novamente")}</Text>
+        </TouchableOpacity>
+      </View>
     );
   }
-
   return (
     <Link href={`/criacao-de-cores/${index}`} key={index} asChild>
       <Pressable className="w-full rounded-md p-2 justify-center items-center">

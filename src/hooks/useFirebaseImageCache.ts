@@ -40,5 +40,9 @@ export function useFirebaseImageCache(imagePath: string) {
     loadImage();
   }, [imagePath]);
 
-  return { url, loading, error };
+  const onRetry = () => {
+    setUrl(null);
+  };
+
+  return { url, loading, error, onRetry };
 }

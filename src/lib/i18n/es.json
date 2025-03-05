@@ -136,5 +136,7 @@
 	"Usuário não encontrado.": "Usuario no encontrado.",
 	"Assistir aula desse gráfico": "Ver clase de este gráfico",
 	"Assistir": "Ver",
-	"Pausar": "Pausar"
+	"Pausar": "Pausar",
+    "Erro ao carrergar imagem": "Error al cargar la imagen",
+    "Tente novamente": "Inténtalo de nuevo"
 }
