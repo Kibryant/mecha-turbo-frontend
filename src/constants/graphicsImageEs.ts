@@ -74,6 +74,5 @@ export const graphicsImagesEs: { [key: string]: string[] } = {
     "graficos/espanhol/sun-light-2/1.png",
     "graficos/espanhol/sun-light-2/2.png",
     "graficos/espanhol/sun-light-2/3.png",
-    "graficos/espanhol/sun-light-2/4.png",
   ],
 };

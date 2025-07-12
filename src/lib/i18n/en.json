@@ -32,7 +32,6 @@
   "OBSVERVAÇÃO: VOCÊ PRECISA VER NO LAVATÓRIO A COR QUE ESTÁ NA FOTO": "OBSERVATION: YOU NEED TO SEE IN THE SINK THE COLOR THAT IS IN THE PHOTO",
   "Tonalizações": "Toning",
   "Observações importantes": "Important observations",
-  "VER GRÁFICO DA TÉCNICA": "SEE THE TECHNIQUE GRAPH",
   "Crie Nuances": "Create Nuances",
   "Eriçados e Quadrantes": "Curled and Quadrants",
   "Gráficos": "Graphics",
@@ -138,5 +137,6 @@
   "Assistir": "Watch",
   "Pausar": "Pause",
   "Erro ao carregar imagem": "Error loading image",
-  "Tente novamente": "Try again"
+  "Tente novamente": "Try again",
+  "VER GRÁFICO DA TÉCNICA": "SEE THE TECHNIQUE GRAPH"
 }
