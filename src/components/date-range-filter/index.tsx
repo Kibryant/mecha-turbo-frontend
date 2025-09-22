@@ -43,12 +43,14 @@ export default function DateRangeFilter({
               : "Não selecionada"}
           </Text>
         </TouchableHighlight>
+
         {showPuchaseDatePicker && (
           <DateTimePicker
             value={purchaseDate || new Date()}
             mode="date"
             display="inline"
             onChange={onChangePurchaseDate}
+            themeVariant="dark"
           />
         )}
       </View>

@@ -142,6 +142,7 @@ export default function SignInAdm() {
                     className="w-full px-2 py-3 border rounded-md border-gray-700 font-body"
                     placeholder="Email"
                     keyboardType="email-address"
+                    autoCapitalize="none"
                     accessibilityLabel="Email"
                     placeholderTextColor="#374151"
                     style={{ color: "#f3f4f6", fontSize: 12 }}

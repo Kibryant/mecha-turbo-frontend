@@ -44,7 +44,7 @@ export default function Layout() {
           drawerInactiveTintColor: "#f3f4f6",
           headerStyle: {
             backgroundColor: "#0d0d0d",
-            borderBottomWidth: 0.4,
+            borderBottomWidth: 1,
             borderBottomColor: "#f3f4f6",
           },
           drawerStyle: {
